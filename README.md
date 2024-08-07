@@ -6,7 +6,8 @@
 
 ## 项目截图
 
-<img src="./pictures/img.png" style="border:2px solid #f4f4f4;border-radius:10px"/>
+| ![输入图片说明](pictures/img.jpg) | ![输入图片说明](pictures/img.jpg) |  ![输入图片说明](pictures/img.jpg) |
+|---------------------------------------------------------|---------------------------------------------------|---|
 
 ## 计划开源的功能
     - 人像动漫化
