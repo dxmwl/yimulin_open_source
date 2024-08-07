@@ -36,14 +36,6 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        //通过maven接入时，要做如下配置
-        maven {
-            url "https://repos.xiaomi.com/maven"
-            credentials {
-                username 'mimo-developer'
-                password 'AKCp8ih1PFG9tV8qaLyws67dLGZi8udFM39SfsHgihN15cgsiRvHuxj8JzFmuZjaViVeNawaA'
-            }
-        }
         // 友盟远程仓库：https://info.umeng.com/detail?id=443&cateId=1
         maven { url 'https://repo1.maven.org/maven2' }
         // 阿里云云效仓库：https://maven.aliyun.com/mvn/guide

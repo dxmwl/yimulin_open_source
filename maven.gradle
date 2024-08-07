@@ -11,13 +11,6 @@ static def addCommonMaven(RepositoryHandler handler) {
     handler.google()
     // noinspection JcenterRepositoryObsolete
     handler.jcenter()
-    handler.maven {
-        url "https://repos.xiaomi.com/maven"
-        credentials {
-            username 'mimo-developer'
-            password 'AKCp8ih1PFG9tV8qaLyws67dLGZi8udFM39SfsHgihN15cgsiRvHuxj8JzFmuZjaViVeNawaA'
-        }
-    }
 }
 
 ext.addCommonMaven = this.&addCommonMaven
