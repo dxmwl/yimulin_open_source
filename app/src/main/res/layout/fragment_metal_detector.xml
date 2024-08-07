@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.hjq.shape.layout.ShapeLinearLayout
+            android:layout_width="match_parent"
+            app:shape_strokeWidth="1dp"
+            android:orientation="vertical"
+            app:shape_strokeColor="#ccc"
+            app:shape_radius="10dp"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/total_value"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:text="总磁感应强度0 μT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/status_tv"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:text="未探测到金属"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:text="请将手机接近探测目标，一般情况下只能探测铁元素金属"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </com.hjq.shape.layout.ShapeLinearLayout>
+
+        <TextView
+            android:id="@+id/text_view_x"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_x"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_view_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_y"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_view_z"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_z"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <com.ihat.pihat.circleprogress.CircleProgress
+                android:id="@+id/circle_progress_x"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:circleStrokeWidth="2dp"
+                app:despText="X Detective"
+                app:despTextSize="07sp"
+                app:roundProgressColor="@color/colorPrimaryDark"
+                app:valueText="None"
+                app:valueTextColor="@color/colorAccent"
+                app:valueTextSize="13sp" />
+
+            <com.ihat.pihat.circleprogress.CircleProgress
+                android:id="@+id/circle_progress_y"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                app:circleStrokeWidth="2dp"
+                app:despText="Y Detective"
+                app:despTextSize="07sp"
+                app:roundProgressColor="@color/colorPrimaryDark"
+                app:valueText="None"
+                app:valueTextColor="@color/colorAccent"
+                app:valueTextSize="13sp" />
+
+            <com.ihat.pihat.circleprogress.CircleProgress
+                android:id="@+id/circle_progress_z"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:circleStrokeWidth="2dp"
+                app:despText="Z Detective"
+                app:despTextSize="07sp"
+                app:roundProgressColor="@color/colorPrimaryDark"
+                app:valueText="None"
+                app:valueTextColor="@color/colorAccent"
+                app:valueTextSize="13sp" />
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/line_chart"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

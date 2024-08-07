@@ -1,0 +1,75 @@
+pluginManagement {
+    repositories {
+        //通过maven接入时，要做如下配置
+        maven {
+            url "https://repos.xiaomi.com/maven"
+            credentials {
+                username 'mimo-developer'
+                password 'AKCp8ih1PFG9tV8qaLyws67dLGZi8udFM39SfsHgihN15cgsiRvHuxj8JzFmuZjaViVeNawaA'
+            }
+        }
+        gradlePluginPortal()
+        // 阿里云云效仓库（Gradle 插件）：https://maven.aliyun.com/mvn/guide
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        // 阿里云云效仓库：https://maven.aliyun.com/mvn/guide
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        // 华为开源镜像：https://mirrors.huaweicloud.com
+        maven { url 'https://repo.huaweicloud.com/repository/maven' }
+        // JitPack 远程仓库：https://jitpack.io
+        maven { url 'https://jitpack.io' }
+        // MavenCentral 远程仓库：https://mvnrepository.com
+        mavenCentral()
+        // Google 仓库：https://maven.google.com/web/index.html
+        google()
+        // noinspection JcenterRepositoryObsolete
+        jcenter()
+        //Gromore maven 仓库
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle"
+        }
+        maven {
+            url 'https://artifact.bytedance.com/repository/Volcengine/'
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        //通过maven接入时，要做如下配置
+        maven {
+            url "https://repos.xiaomi.com/maven"
+            credentials {
+                username 'mimo-developer'
+                password 'AKCp8ih1PFG9tV8qaLyws67dLGZi8udFM39SfsHgihN15cgsiRvHuxj8JzFmuZjaViVeNawaA'
+            }
+        }
+        // 友盟远程仓库：https://info.umeng.com/detail?id=443&cateId=1
+        maven { url 'https://repo1.maven.org/maven2' }
+        // 阿里云云效仓库：https://maven.aliyun.com/mvn/guide
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        // 华为开源镜像：https://mirrors.huaweicloud.com
+        maven { url 'https://repo.huaweicloud.com/repository/maven' }
+        // JitPack 远程仓库：https://jitpack.io
+        maven { url 'https://jitpack.io' }
+        // MavenCentral 远程仓库：https://mvnrepository.com
+        mavenCentral()
+        // Google 仓库：https://maven.google.com/web/index.html
+        google()
+        // noinspection JcenterRepositoryObsolete
+        jcenter()
+        //Gromore maven 仓库
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle"
+        }
+        maven {
+            url 'https://artifact.bytedance.com/repository/Volcengine/'
+        }
+    }
+}
+
+include ':app'
+include ':library:base'
+include ':library:widget'
+include ':library:umeng'

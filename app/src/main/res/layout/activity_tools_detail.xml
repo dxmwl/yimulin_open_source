@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        app:rightTitle="分享"
+        app:title="工具详情"
+        app:titleStyle="bold"
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:visibility="invisible"
+            android:id="@+id/layout_search"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="80dp"
+                android:gravity="center_vertical"
+                app:shape_radius="15dp"
+                app:shape_solidColor="#F1F1F1">
+
+                <com.hjq.widget.view.ClearEditText
+                    android:id="@+id/input_keyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="输入要搜索的内容"
+                    android:imeOptions="actionSearch"
+                    android:lines="1"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="5dp"
+                    android:singleLine="true" />
+
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.hjq.shape.view.ShapeTextView
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="10dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="搜索"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:shape_radius="15dp"
+                app:shape_solidColor="@color/common_accent_color" />
+        </RelativeLayout>
+    </com.hjq.bar.TitleBar>
+
+    <FrameLayout
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

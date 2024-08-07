@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/popu_bg_round">
+
+    <com.hjq.shape.view.ShapeView
+        android:id="@+id/shapeView2"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="#FFEDEDED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shape_radius="1.5dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="举报类型"
+        android:textColor="#FF4D4D4D"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shapeView2" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/shapeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_16"
+        android:paddingVertical="6dp"
+        android:paddingStart="@dimen/dp_10"
+        android:text="恶意举报将面临封号,请谨慎选择"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:shape_radius="@dimen/dp_20"
+        app:shape_solidColor="@color/common_accent_color" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="请选择举报类型"
+        android:textColor="#FFB3B3B3"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shapeView" />
+
+    <GridView
+        android:id="@+id/list_of_options"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_16"
+        android:horizontalSpacing="16dp"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:verticalSpacing="@dimen/dp_16"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tips" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:layout_margin="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/cancel_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:shape_bottomLeftRadius="@dimen/dp_100"
+            app:shape_solidColor="@color/common_button_disable_color"
+            app:shape_topLeftRadius="@dimen/dp_100" />
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/confirm_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:shape_bottomRightRadius="@dimen/dp_100"
+            app:shape_solidColor="@color/common_accent_color"
+            app:shape_topRightRadius="@dimen/dp_100" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

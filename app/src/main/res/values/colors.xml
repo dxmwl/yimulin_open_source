@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App 样式中引用的颜色 -->
+    <color name="common_primary_color">@color/white</color>
+    <color name="common_primary_dark_color">@color/black</color>
+    <color name="common_accent_color">#5A8DDF</color>
+    <color name="common_window_background_color">#AFE5FA</color>
+    <color name="common_text_color">#333333</color>
+    <color name="common_text_hint_color">@color/panda</color>
+
+    <!-- 按钮按压时的颜色 -->
+    <color name="common_button_pressed_color">#AA5A8DDF</color>
+    <!-- 按钮禁用时的颜色 -->
+    <color name="common_button_disable_color">#BBBBBB</color>
+    <!-- 分割线的颜色 -->
+    <color name="common_line_color">#ECECEC</color>
+    <!-- 矢量图标的颜色 -->
+    <color name="common_icon_color">#7C7C7C</color>
+
+    <!-- 对话框确认按钮的文本颜色 -->
+    <color name="common_confirm_text_color">#007AFF</color>
+    <!-- 对话框取消按钮的文本颜色 -->
+    <color name="common_cancel_text_color">#F44336</color>
+
+    <color name="title_color">#333333</color>
+    <color name="content_color">#999999</color>
+
+    <color name="darkRed">#702216</color>
+    <color name="lightGray">#323232</color>
+    <color name="deepGray">#8B8B8B</color>
+    <color name="ocbg">#237EAD</color>
+
+    <!-- base -->
+    <color name="transparent">#00FFFFFF</color>
+    <color name="orange">#F28500</color>
+    <color name="black">#000000</color>
+    <color name="grey">#808080</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="grey_91">#E9E9E9</color>
+    <color name="white_96">#F5F5F5</color>
+
+    <color name="divide">#0E2F464F</color>
+
+    <color name="label_bg_checked">#1A5A8DDF</color>
+    <color name="label_bg_no_checked">#FFFFFF</color>
+    <color name="label_stroke_no_checked">#F6F6F6</color>
+
+    <color name="label_text_color_no_checked">#999999</color>
+    <color name="label_text_color_checked">@color/common_accent_color</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="DarkSlateGray">#2F4F4F</color>
+    <color name="DimGray">#313131</color>
+</resources>

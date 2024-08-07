@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    app:shape_radius="15dp"
+    android:id="@+id/layout_root"
+    android:layout_marginEnd="10dp"
+    app:shape_solidColor="@color/white"
+    app:shape_strokeColor="@color/common_accent_color"
+    app:shape_strokeWidth="2dp">
+
+    <com.hjq.shape.view.ShapeTextView
+        android:text="最多人选"
+        android:id="@+id/tv_label"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        app:shape_bottomRightRadius="15dp"
+        app:shape_topLeftRadius="15dp"
+        app:shape_solidColor="@color/common_accent_color"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="月卡"
+        android:textColor="@color/common_accent_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="¥0"
+        android:textColor="@color/common_accent_color"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/ori_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="¥0"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/common_accent_color"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+</com.hjq.shape.layout.ShapeConstraintLayout>

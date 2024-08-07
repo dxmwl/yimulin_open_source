@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_country"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/white_96">
+
+        <RelativeLayout
+            android:id="@+id/rl_country1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_flag1"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="@dimen/dp_56"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/country_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CNY"
+                android:textSize="@dimen/sp_24"
+                android:layout_toRightOf="@id/img_flag1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_20"/>
+            <LinearLayout
+                android:id="@+id/country_coin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20">
+                <TextView
+                    android:id="@+id/country_money1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="0"
+                    android:textSize="@dimen/sp_24"
+                    android:textColor="#FF0000"
+                    android:layout_marginBottom="@dimen/dp_2"/>
+                <TextView
+                    android:id="@+id/country_coin_type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="人民币"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/dp_2"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_height="@dimen/dp_1"
+            style="@style/divide.horizontal"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_country2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_flag2"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="@dimen/dp_56"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/country_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD"
+                android:textSize="@dimen/sp_24"
+                android:layout_toRightOf="@id/img_flag2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_20"/>
+            <LinearLayout
+                android:id="@+id/country_coin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20">
+                <TextView
+                    android:id="@+id/country_money2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="0"
+                    android:textSize="@dimen/sp_24"
+                    android:textColor="#FF0000"
+                    android:layout_marginBottom="@dimen/dp_2"/>
+                <TextView
+                    android:id="@+id/country_coin_type2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="美元"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/dp_2"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_height="@dimen/dp_1"
+            style="@style/divide.horizontal"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_country3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/img_flag3"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="@dimen/dp_56"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/country_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EUR"
+                android:textSize="@dimen/sp_24"
+                android:layout_toRightOf="@id/img_flag3"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_20"/>
+            <LinearLayout
+                android:id="@+id/country_coin3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20">
+                <TextView
+                    android:id="@+id/country_money3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="0"
+                    android:textSize="@dimen/sp_24"
+                    android:textColor="#FF0000"
+                    android:layout_marginBottom="@dimen/dp_2"/>
+                <TextView
+                    android:id="@+id/country_coin_type3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="欧元"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/dp_2"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_column1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num7"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num4"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num1"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_0"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num0"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divide_vertical1"
+            android:layout_width="@dimen/dp_1"
+            style="@style/divide.vertical"/>
+
+        <LinearLayout
+            android:id="@+id/ll_column2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num8"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num5"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num2"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_empty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp_1"
+            style="@style/divide.vertical"/>
+
+        <LinearLayout
+            android:id="@+id/ll_column3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num9"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num6"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/num3"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <TextView
+                android:id="@+id/btn_point"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="."
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp_1"
+            style="@style/divide.vertical"/>
+
+        <LinearLayout
+            android:id="@+id/ll_column4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btn_AC"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/AC"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/orange"/>
+
+            <View
+                android:layout_height="@dimen/dp_1"
+                style="@style/divide.horizontal"/>
+
+            <RelativeLayout
+                android:id="@+id/btn_del"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_delete"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

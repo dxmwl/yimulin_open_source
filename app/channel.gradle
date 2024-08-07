@@ -1,0 +1,71 @@
+android {
+    flavorDimensions "channel" // 可以自定义维度名称
+
+    productFlavors {
+        guanfang {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "guanfang"
+            manifestPlaceholders = [UMENG_CHANNEL: "guanfang"]
+        }
+
+        huawei {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "huawei" // 友盟或其他第三方统计平台的渠道标识
+            manifestPlaceholders = [UMENG_CHANNEL: "huawei"]
+        }
+
+        xiaomi {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "xiaomi"
+            manifestPlaceholders = [UMENG_CHANNEL: "xiaomi"]
+        }
+
+        honor {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "honor"
+            manifestPlaceholders = [UMENG_CHANNEL: "honor"]
+        }
+
+        yingyongbao {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "yingyongbao"
+            manifestPlaceholders = [UMENG_CHANNEL: "yingyongbao"]
+        }
+
+        oppo {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "oppo"
+            manifestPlaceholders = [UMENG_CHANNEL: "oppo"]
+        }
+
+        vivo {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "vivo"
+            manifestPlaceholders = [UMENG_CHANNEL: "vivo"]
+        }
+
+        meizu {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "meizu"
+            manifestPlaceholders = [UMENG_CHANNEL: "meizu"]
+        }
+
+        baidu {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "baidu"
+            manifestPlaceholders = [UMENG_CHANNEL: "baidu"]
+        }
+
+        ali {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "ali"
+            manifestPlaceholders = [UMENG_CHANNEL: "ali"]
+        }
+
+        pugongying {
+            dimension "channel"
+            resValue "string", "UMENG_CHANNEL", "pugongying"
+            manifestPlaceholders = [UMENG_CHANNEL: "pugongying"]
+        }
+    }
+}

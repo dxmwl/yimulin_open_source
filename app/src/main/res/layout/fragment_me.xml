@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的"
+                    android:textColor="#ff353637"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <com.hjq.shape.layout.ShapeConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:padding="@dimen/dp_10"
+                app:shape_radius="@dimen/dp_12"
+                app:shape_solidColor="@color/white">
+
+                <ImageView
+                    android:id="@+id/user_avatar"
+                    android:layout_width="@dimen/dp_72"
+                    android:layout_height="@dimen/dp_72"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nick_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="注册/登录"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintBottom_toBottomOf="@id/user_avatar"
+                    app:layout_constraintStart_toEndOf="@+id/user_avatar"
+                    app:layout_constraintTop_toTopOf="@+id/user_avatar" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="会员过期时间："
+                    android:textColor="#666666"
+                    android:textSize="10sp"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/nick_name"
+                    app:layout_constraintTop_toBottomOf="@+id/nick_name" />
+
+                <com.hjq.shape.view.ShapeTextView
+                    android:id="@+id/member_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp"
+                    android:text="开通会员"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toTopOf="@+id/textView5"
+                    app:shape_radius="10dp"
+                    app:shape_solidColor="@color/common_accent_color" />
+
+            </com.hjq.shape.layout.ShapeConstraintLayout>
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner_me"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                app:banner_indicator_height="@dimen/dp_6"
+                app:banner_indicator_normal_color="#BABABA"
+                app:banner_indicator_normal_width="@dimen/dp_12"
+                app:banner_indicator_radius="3dp"
+                app:banner_indicator_selected_color="@color/white"
+                app:banner_indicator_selected_width="@dimen/dp_12" />
+
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_10"
+                app:shape_radius="@dimen/dp_10"
+                app:shape_solidColor="@color/white">
+
+                <com.hjq.widget.layout.SettingBar
+                    android:id="@+id/join_qq_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_leftDrawable="@drawable/icon_join_group"
+                    app:bar_leftText="加入群组"
+                    app:bar_rightDrawable="@drawable/icon_more_sanjiao"
+                    app:bar_rightTextSize="14sp" />
+
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_10"
+                app:shape_radius="@dimen/dp_10"
+                app:shape_solidColor="@color/white">
+
+                <com.hjq.widget.layout.SettingBar
+                    android:id="@+id/my_member"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_leftDrawable="@drawable/user_member_icon"
+                    app:bar_leftText="会员"
+                    app:bar_rightDrawable="@drawable/icon_more_sanjiao"
+                    app:bar_rightTextHint="更多服务"
+                    app:bar_rightTextSize="14sp" />
+                <com.hjq.widget.layout.SettingBar
+                    android:id="@+id/user_feed_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_leftDrawable="@drawable/kefu_icon"
+                    app:bar_leftText="用户反馈"
+                    app:bar_rightDrawable="@drawable/icon_more_sanjiao"
+                    app:bar_rightTextSize="14sp" />
+
+                <com.hjq.widget.layout.SettingBar
+                    android:id="@+id/user_tousu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_leftDrawable="@drawable/kefu_icon"
+                    app:bar_leftText="投诉"
+                    app:bar_rightDrawable="@drawable/icon_more_sanjiao"
+                    app:bar_rightTextSize="14sp" />
+
+                <com.hjq.widget.layout.SettingBar
+                    android:id="@+id/kefu_online"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_leftDrawable="@drawable/kefu_icon"
+                    app:bar_leftText="客服"
+                    app:bar_rightDrawable="@drawable/icon_more_sanjiao"
+                    app:bar_rightTextHint="一对一沟通"
+                    app:bar_rightTextSize="14sp" />
+
+                <com.hjq.widget.layout.SettingBar
+                    android:id="@+id/setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:bar_leftDrawable="@drawable/mine_setting_icon"
+                    app:bar_leftText="设置"
+                    app:bar_lineVisible="false"
+                    app:bar_rightDrawable="@drawable/icon_more_sanjiao" />
+            </com.hjq.shape.layout.ShapeLinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</com.hjq.shape.layout.ShapeLinearLayout>

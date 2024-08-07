@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_coin_type"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_coin_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:text="人民币"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/tv_coin_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="CNY"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/black"/>
+</LinearLayout>

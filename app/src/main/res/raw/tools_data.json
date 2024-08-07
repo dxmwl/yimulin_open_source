@@ -1,0 +1,546 @@
+{
+  "version": 1,
+  "data": [
+    {
+      "className": "推荐工具",
+      "isLocal": true,
+      "classId": 14,
+      "children": [
+        {
+          "toolsId": 14001,
+          "toolsName": "摸鱼日历",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14002,
+          "toolsName": "摸鱼日报",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14003,
+          "toolsName": "明星八卦",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14004,
+          "toolsName": "内涵段子",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14005,
+          "toolsName": "新闻简报",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14006,
+          "toolsName": "情感花园",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14007,
+          "toolsName": "星座运势",
+          "isFullScreen": true
+        }
+      ]
+    },
+    {
+      "className": "文字工具",
+      "isLocal": true,
+      "classId": 1,
+      "children": [
+        {
+          "toolsId": 1001,
+          "toolsName": "文字转语音"
+        },
+        {
+          "toolsId": 1002,
+          "toolsName": "中文转拼音"
+        },
+        {
+          "toolsId": 1003,
+          "toolsName": "数字转中文"
+        },
+        {
+          "toolsId": 1004,
+          "toolsName": "拆分选词"
+        },
+        {
+          "toolsId": 1005,
+          "toolsName": "手持弹幕"
+        }
+      ]
+    },
+    {
+      "className": "设备工具",
+      "isLocal": true,
+      "classId": 2,
+      "children": [
+        {
+          "toolsId": 2001,
+          "toolsName": "指南针",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 2002,
+          "toolsName": "水平仪",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 2005,
+          "toolsName": "查看设备详细信息"
+        },
+        {
+          "toolsId": 2006,
+          "toolsName": "金属探测仪"
+        },
+        {
+          "toolsId": 2007,
+          "toolsName": "小米时钟",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 2008,
+          "toolsName": "手机应用管理",
+          "isFullScreen": false
+        },
+        {
+          "toolsId": 2009,
+          "toolsName": "翻页时钟",
+          "isFullScreen": true
+        }
+      ]
+    },
+    {
+      "className": "加解密工具",
+      "isLocal": true,
+      "classId": 3,
+      "children": [
+        {
+          "toolsId": 3001,
+          "toolsName": "MD5加密"
+        },
+        {
+          "toolsId": 3002,
+          "toolsName": "Base64编码/解码"
+        },
+        {
+          "toolsId": 3003,
+          "toolsName": "摩斯密码"
+        }
+      ]
+    },
+    {
+      "className": "查询工具",
+      "isLocal": false,
+      "classId": 4,
+      "children": [
+        {
+          "toolsId": 4001,
+          "toolsName": "邮编查询",
+          "isNeedSearch": true
+        },
+        {
+          "toolsId": 4002,
+          "toolsName": "公司黑名单",
+          "isNeedSearch": true
+        },
+        {
+          "toolsId": 4003,
+          "toolsName": "今日热榜",
+          "url": "http://web.sygjx.com/tool/jrrb/?bb=106"
+        },
+        {
+          "toolsId": 4004,
+          "toolsName": "全网热搜",
+          "url": "https://h5.mse.360.cn/24thresou.html#/"
+        },
+        {
+          "toolsId": 4005,
+          "toolsName": "元素周期表",
+          "url": "https://tool.lu/zh_CN/periodic/"
+        },
+        {
+          "toolsId": 4006,
+          "toolsName": "购物优惠查询"
+        }
+      ]
+    },
+    {
+      "className": "开发工具",
+      "isLocal": false,
+      "classId": 5,
+      "children": [
+        {
+          "toolsId": 5001,
+          "toolsName": "MD5加密",
+          "url": "https://c.runoob.com/front-end/703/"
+        },
+        {
+          "toolsId": 5002,
+          "toolsName": "JSON格式化",
+          "url": "https://c.runoob.com/front-end/53/"
+        },
+        {
+          "toolsId": 5003,
+          "toolsName": "时间戳转换",
+          "url": "https://c.runoob.com/front-end/852/"
+        },
+        {
+          "toolsId": 5005,
+          "toolsName": "进制转换器",
+          "url": "https://c.runoob.com/front-end/58/"
+        },
+        {
+          "toolsId": 5006,
+          "toolsName": "XML格式化",
+          "url": "https://c.runoob.com/front-end/710/"
+        },
+        {
+          "toolsId": 5007,
+          "toolsName": "正则表达式工具",
+          "url": "https://tool.lu/regex/"
+        },
+        {
+          "toolsId": 5008,
+          "toolsName": "JS工具",
+          "url": "https://tool.lu/js/"
+        },
+        {
+          "toolsId": 5009,
+          "toolsName": "css工具",
+          "url": "https://tool.lu/css/"
+        },
+        {
+          "toolsId": 50010,
+          "toolsName": "php工具",
+          "url": "https://tool.lu/php/"
+        },
+        {
+          "toolsId": 50011,
+          "toolsName": "html工具",
+          "url": "https://tool.lu/html/"
+        },
+        {
+          "toolsId": 50012,
+          "toolsName": "python工具",
+          "url": "https://tool.lu/pyc/"
+        },
+        {
+          "toolsId": 50013,
+          "toolsName": "sql工具",
+          "url": "https://tool.lu/sql/"
+        },
+        {
+          "toolsId": 50013,
+          "toolsName": "java工具",
+          "url": "https://tool.lu/java/"
+        },
+        {
+          "toolsId": 50014,
+          "toolsName": "在线运行代码",
+          "url": "https://tool.lu/coderunner/"
+        },
+        {
+          "toolsId": 50015,
+          "toolsName": "在线运行代码",
+          "url": "https://tool.lu/coderunner/"
+        },
+        {
+          "toolsId": 50016,
+          "toolsName": "html特殊字符表",
+          "url": "https://tool.lu/htmlentity/"
+        },
+        {
+          "toolsId": 50017,
+          "toolsName": "在线状态码",
+          "url": "https://tool.lu/httpcode/"
+        },
+        {
+          "toolsId": 50018,
+          "toolsName": "Linux命令",
+          "url": "https://tool.lu/command/"
+        },
+        {
+          "toolsId": 50019,
+          "toolsName": "shell工具",
+          "url": "https://tool.lu/shell/"
+        }
+      ]
+    },
+    {
+      "className": "图片工具",
+      "isLocal": true,
+      "classId": 7,
+      "children": [
+        {
+          "toolsId": 7003,
+          "toolsName": "条码识别"
+        },
+        {
+          "toolsId": 7004,
+          "toolsName": "二维码识别"
+        },
+        {
+          "toolsId": 7005,
+          "toolsName": "银行卡识别"
+        },
+        {
+          "toolsId": 7006,
+          "toolsName": "车牌识别"
+        }
+      ]
+    },
+    {
+      "className": "计算工具",
+      "isLocal": true,
+      "classId": 8,
+      "children": [
+        {
+          "toolsId": 8001,
+          "toolsName": "计算器",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 8002,
+          "toolsName": "年龄星座计算",
+          "isFullScreen": false
+        },
+        {
+          "toolsId": 8003,
+          "toolsName": "身高预测",
+          "isFullScreen": false
+        }
+      ]
+    },
+    {
+      "className": "地图工具",
+      "isLocal": false,
+      "classId": 9,
+      "children": [
+        {
+          "toolsId": 9001,
+          "toolsName": "定位信息获取"
+        },
+        {
+          "toolsId": 9002,
+          "toolsName": "路线查询"
+        },
+        {
+          "toolsId": 9003,
+          "toolsName": "坐标拾取"
+        }
+      ]
+    },
+    {
+      "className": "计算工具",
+      "isLocal": false,
+      "classId": 10,
+      "children": [
+        {
+          "toolsId": 10001,
+          "toolsName": "汇率计算",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 10002,
+          "toolsName": "亲属关系计算",
+          "isFullScreen": true
+        }
+      ]
+    },
+    {
+      "className": "日常工具",
+      "isLocal": true,
+      "classId": 11,
+      "children": [
+        {
+          "toolsId": 11001,
+          "toolsName": "做个选择",
+          "isFullScreen": false
+        },
+        {
+          "toolsId": 11002,
+          "toolsName": "尺子",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 11003,
+          "toolsName": "分贝仪",
+          "isFullScreen": true
+        }
+      ]
+    },
+    {
+      "className": "图片工具",
+      "isLocal": false,
+      "classId": 12,
+      "children": [
+        {
+          "toolsId": 12002,
+          "toolsName": "国旗头像制作",
+          "url": "http://web.sygjx.com/tool/gqtxzz/?bb=106"
+        },
+        {
+          "toolsId": 12003,
+          "toolsName": "以图搜图",
+          "url": "https://pic.sogou.com/pic/index.jsp?v=5"
+        },
+        {
+          "toolsId": 12004,
+          "toolsName": "图片变绿",
+          "url": "https://h5.codefuture.top/widgetbox-tools/image_patina"
+        },
+        {
+          "toolsId": 12005,
+          "toolsName": "颜色提取",
+          "url": "https://h5.codefuture.top/widgetbox-tools/color"
+        },
+        {
+          "toolsId": 12006,
+          "toolsName": "抖音风格文字生成",
+          "url": "https://h5.codefuture.top/widgetbox-tools/douyin_text"
+        }
+      ]
+    },
+    {
+      "className": "其他工具",
+      "isLocal": true,
+      "classId": 13,
+      "children": [
+        {
+          "toolsId": 13001,
+          "toolsName": "QQ强制对话"
+        }
+      ]
+    },
+    {
+      "className": "日常工具",
+      "isLocal": false,
+      "classId": 14,
+      "children": [
+        {
+          "toolsId": 14001,
+          "toolsName": "摸鱼日历",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14002,
+          "toolsName": "摸鱼日报",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14003,
+          "toolsName": "明星八卦",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14004,
+          "toolsName": "内涵段子",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14005,
+          "toolsName": "新闻简报",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14006,
+          "toolsName": "情感花园",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14007,
+          "toolsName": "星座运势",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 14008,
+          "toolsName": "饿了么外卖优惠",
+          "url": "https://kzurl11.cn/72G7M8"
+        },
+        {
+          "toolsId": 14009,
+          "toolsName": "美团外卖优惠",
+          "url": "https://dpurl.cn/fgUImTOz"
+        },
+        {
+          "toolsId": 140010,
+          "toolsName": "全网会员充值",
+          "url": "https://7fmuxynp.jutuike.cn/#/pages/digital/index?code=7fmUxYnP&showMenu=false"
+        },
+        {
+          "toolsId": 140011,
+          "toolsName": "网名大全",
+          "url": "https://hanyu.baidu.com/s?wd=%E7%BD%91%E5%90%8D"
+        },
+        {
+          "toolsId": 140012,
+          "toolsName": "每日红包",
+          "url": "https://kurl03.cn/NXxbw"
+        },
+        {
+          "toolsId": 140013,
+          "toolsName": "网络测速",
+          "url": "https://plugin.speedtest.cn/"
+        },
+        {
+          "toolsId": 140014,
+          "toolsName": "白噪音",
+          "url": "http://bzy.sygjx.com/?bb=106"
+        }
+      ]
+    },
+    {
+      "className": "其他工具",
+      "isLocal": false,
+      "classId": 15,
+      "children": [
+        {
+          "toolsId": 15001,
+          "toolsName": "烟花模拟器",
+          "url": "https://www.slcp.top/fireworks",
+          "isFullScreen": true,
+          "isNeedViewAd": true
+        },
+        {
+          "toolsId": 15003,
+          "toolsName": "表白网页制作",
+          "url": "http://bbwyzz.sygjx.com/?bb=106",
+          "isFullScreen": true,
+          "isNeedViewAd": true
+        },
+        {
+          "toolsId": 15004,
+          "toolsName": "热门短剧",
+          "isFullScreen": true
+        },
+        {
+          "toolsId": 15005,
+          "toolsName": "热门短视频"
+        }
+      ]
+    },
+    {
+      "className": "趣味工具",
+      "isLocal": false,
+      "classId": 16,
+      "children": [
+        {
+          "toolsId": 16001,
+          "toolsName": "扫雷",
+          "url": "http://sl.sygjx.com/?bb=106"
+        },
+        {
+          "toolsId": 16002,
+          "toolsName": "找手机",
+          "url": "http://flash.7k7k.com/cms/cms10/20200111/1707474892/baba/gameIndex.html?uc_biz_str=qk_enable_gesture:false|OPT:BACK_BTN_STYLE@0|OPT:TOOLBAR_STYLE@1"
+        },
+        {
+          "toolsId": 16003,
+          "toolsName": "盖楼",
+          "url": "http://web.sygjx.com/tool/glyx/?bb=106"
+        }
+      ]
+    }
+  ]
+}

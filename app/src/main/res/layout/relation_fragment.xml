@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_screen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white_96">
+
+        <com.yimulin.mobile.widget.SingleLineZoomTextView
+            android:id="@+id/tv_call"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_100"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/sp_32"
+            android:textColor="@color/black"
+            android:padding="@dimen/dp_25"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/tv_relation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_call"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="我"
+            android:textSize="@dimen/sp_32"
+            android:textColor="@color/black"
+            android:padding="@dimen/dp_25"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/ll_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_husband"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="夫"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_wife"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="妻"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <RelativeLayout
+                android:id="@+id/btn_del"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_delete"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_AC"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="AC"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/orange"/>
+        </LinearLayout>
+
+        <View
+            android:layout_height="1dp"
+            style="@style/divide.horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_fathter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="父"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_mother"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="母"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_bro1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="兄"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_bro2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="弟"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <View
+            android:layout_height="1dp"
+            style="@style/divide.horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btn_sister1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="姐"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_sister2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="妹"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_son"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="子"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_daughter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="女"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <View
+            android:layout_height="1dp"
+            style="@style/divide.horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/btn_each_other"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="互查"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/grey"/>
+
+            <View
+                android:layout_width="1dp"
+                style="@style/divide.vertical"/>
+
+            <TextView
+                android:id="@+id/btn_equal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="＝"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/white"
+                android:background="@color/orange"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

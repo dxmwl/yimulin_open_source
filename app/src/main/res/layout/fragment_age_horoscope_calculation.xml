@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:id="@+id/layout_choose_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical"
+        android:paddingVertical="10dp"
+        app:shape_radius="8dp"
+        app:shape_solidColor="#F6F6F6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生日"
+            android:layout_marginEnd="26dp"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/user_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请选择你的生日"
+            tools:text="12月11日"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:paddingVertical="10dp"
+        app:shape_radius="8dp"
+        app:shape_solidColor="#F6F6F6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年龄"
+            android:layout_marginEnd="26dp"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="根据生日自动生成"
+            tools:text="23"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:paddingVertical="10dp"
+        app:shape_radius="8dp"
+        app:shape_solidColor="#F6F6F6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="星座"
+            android:layout_marginEnd="26dp"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_xingzuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="根据生日自动生成"
+            tools:text="金牛"
+            android:textColor="#ff333333"
+            android:textSize="16sp" />
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+
+</LinearLayout>

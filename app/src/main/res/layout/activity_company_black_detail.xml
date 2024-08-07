@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="举报详情" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:shape_radius="12dp"
+                app:shape_solidColor="@color/white">
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="公司名称" />
+
+                <TextView
+                    android:id="@+id/company_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="14sp"
+                    tools:text="98ASFG4844566566556" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="法人姓名:"
+                        android:textColor="#333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        tools:text="张三" />
+                </LinearLayout>
+
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:shape_radius="12dp"
+                app:shape_solidColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="举报原因:"
+                        android:textColor="#333"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/report_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        tools:text="严重加班,不发工资" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="举报描述:"
+                    android:textColor="#333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.hjq.shape.view.ShapeTextView
+                    android:id="@+id/report_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="2dp"
+                    android:minLines="5"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    app:shape_radius="12dp"
+                    app:shape_strokeColor="#333"
+                    app:shape_strokeWidth="0.5dp"
+                    tools:text="上课了大幅水电费所发生的发送到了费时费力撒防守打法快乐十分快乐十分了司法局斯洛伐克" />
+            </com.hjq.shape.layout.ShapeLinearLayout>
+
+            <com.hjq.shape.layout.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:shape_radius="12dp"
+                app:shape_solidColor="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="证据:"
+                    android:textColor="#333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <cn.bingoogolapple.photopicker.widget.BGANinePhotoLayout
+                    android:id="@+id/nine_img_view"
+                    style="@style/MatchWrap"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:bga_npl_itemCornerRadius="5dp"
+                    app:bga_npl_itemSpanCount="3"
+                    app:bga_npl_itemWhiteSpacing="4dp"
+                    app:bga_npl_itemWidth="0dp"
+                    app:bga_npl_otherWhiteSpacing="64dp"
+                    app:bga_npl_placeholderDrawable="@mipmap/bga_pp_ic_holder_light"
+                    app:bga_npl_showAsLargeWhenOnlyOne="true" />
+
+            </com.hjq.shape.layout.ShapeLinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightTitle="提交"
+        app:rightTitleColor="@color/common_accent_color"
+        app:title="举报公司" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="可在个人中心联系客服加急审核"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="统一社会信用代码"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <com.hjq.shape.view.ShapeEditText
+                android:id="@+id/input_tyxydm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="统一社会信用代码"
+                android:maxLength="18"
+                app:shape_radius="5dp"
+                app:shape_solidColor="#fff" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="公司名称"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <com.hjq.shape.view.ShapeEditText
+                android:id="@+id/input_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="公司名称"
+                android:maxLength="18"
+                app:shape_radius="5dp"
+                app:shape_solidColor="#fff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="法人姓名"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <com.hjq.shape.view.ShapeEditText
+                android:id="@+id/input_fr_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="法人姓名"
+                android:maxLength="18"
+                app:shape_radius="5dp"
+                app:shape_solidColor="#fff" />
+
+            <com.hjq.widget.layout.SettingBar
+                android:id="@+id/choose_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:bar_leftText="违法类型:"
+                app:bar_rightDrawable="@drawable/arrows_right_ic"
+                app:bar_rightText="请选择"
+                app:layout_constraintTop_toBottomOf="@+id/titleBar19" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="违法内容"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <com.hjq.shape.view.ShapeEditText
+                android:id="@+id/input_wfnr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start"
+                android:hint="描述违法内容"
+                android:maxLength="5000"
+                android:minLines="5"
+                app:shape_radius="5dp"
+                app:shape_solidColor="#fff" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:itemCount="8"
+                tools:listitem="@layout/gv_filter_image" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

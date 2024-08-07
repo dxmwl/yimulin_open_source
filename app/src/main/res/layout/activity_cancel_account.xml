@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.bar.TitleBar
+        app:titleSize="18sp"
+        app:titleStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="注销账号" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="注销账号须知"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:text="1. 注销账号,您将会失去本账号的使用权"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:text="2. 注销账号,账户将无法登录"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:text="3. 请提前备份您的账号信息,包括但不限于(聊天记录/账号发布信息/好友联系方式等)"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:text="4. 账号注销审核需要一定时间,账号注销提交申请后请勿登录账号,避免账号注销流程中断"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:text="5. 在账号注销后,后期如需使用本应用,需要您更换手机号注册"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <com.hjq.shape.view.ShapeCheckBox
+        android:id="@+id/cb_yhxz"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/sp_10"
+        android:text="我已了解上述须知,并承担账号注销带来的后果"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.hjq.shape.view.ShapeButton
+        android:text="注销账号"
+        android:id="@+id/cancel_account_btn"
+        android:paddingVertical="@dimen/sp_10"
+        android:paddingHorizontal="@dimen/dp_40"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        app:shape_radius="@dimen/dp_20"
+        app:shape_solidColor="@color/red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

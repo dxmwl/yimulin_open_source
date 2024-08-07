@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:id="@+id/shapeLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shape_radius="15dp"
+        app:shape_solidColor="@color/white"
+        app:shape_strokeColor="#ccc"
+        app:shape_strokeWidth="0.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入内容" />
+
+        <EditText
+            android:id="@+id/input_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="在这里输入内容"
+            android:lines="5"
+            android:textSize="14sp" />
+
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+    <com.hjq.shape.view.ShapeButton
+        android:id="@+id/btn_switch"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="开始转语音"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/shapeLinearLayout"
+        app:shape_radius="5dp"
+        app:shape_solidColor="@color/common_accent_color"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:text="投诉"
+        android:id="@+id/btn_tousu"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shape_radius="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:shape_solidColor="@color/common_accent_color"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

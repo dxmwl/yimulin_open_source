@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="父亲身高"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.hjq.shape.view.ShapeEditText
+            android:id="@+id/father_height"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            app:shape_radius="5dp"
+            app:shape_strokeColor="#000000"
+            app:shape_strokeWidth="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="厘米" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="母亲身高"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.hjq.shape.view.ShapeEditText
+            android:id="@+id/mother_height"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            app:shape_radius="5dp"
+            app:shape_strokeColor="#000000"
+            app:shape_strokeWidth="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="厘米" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="孩子性别"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_sex"
+            android:checkedButton="@id/rb_nan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_nan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="男" />
+
+            <RadioButton
+                android:id="@+id/rb_nv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/btn_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:paddingHorizontal="100dp"
+        android:paddingVertical="10dp"
+        android:text="开始计算"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:shape_radius="5dp"
+        app:shape_solidColor="@color/common_accent_color" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="预测结果"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="厘米" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="温馨提示"
+        android:textColor="#6E6E6E"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="
+身高预测公式：\n\n
+男性身高=（父亲身高+母亲身高）×1.08÷2
+（厘米）\n\n
+女性身高=（父亲身高×0.923+母亲身高)
+÷2（厘米）\n\n
+民间口诀：“高加高生高，高加矮生高，矮加
+矮生矮“。\n
+影响孩子身高的因素有很多，预测结果只是一个大概率的趋势，个人成长的各方面影响也很大，因此仅供参考。"
+        android:textColor="#6E6E6E"
+        android:textSize="13sp" />
+</LinearLayout>

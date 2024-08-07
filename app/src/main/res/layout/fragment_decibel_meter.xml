@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.dyzs.compassservant.CompassServant
+            android:id="@+id/compass_servant"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/black"
+            android:padding="0dp"
+            app:cs_color1="@color/white"
+            app:cs_color2="@color/oxygen_green"
+            app:cs_color3="@color/cinnabar_red"
+            app:cs_color4="@color/white"
+            app:cs_color_commander="3"
+            app:cs_decibel="119"
+            app:cs_galaxy_degree="280"
+            app:cs_outer_circle="7dp"
+            app:cs_text_size="30dp"
+            app:cs_tick_mark_length="30dp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

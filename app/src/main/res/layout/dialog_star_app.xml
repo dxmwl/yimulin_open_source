@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="20dp"
+    android:orientation="vertical"
+    android:paddingVertical="15dp"
+    app:shape_radius="15dp"
+    app:shape_solidColor="@color/white">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/star_app_img" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="用着不错？来给我们打个分吧~" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/to_market"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="去评分"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:shape_radius="20dp"
+        app:shape_solidColor="@color/common_accent_color" />
+</com.hjq.shape.layout.ShapeLinearLayout>

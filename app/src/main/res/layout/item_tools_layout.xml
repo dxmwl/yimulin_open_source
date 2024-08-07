@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.shape.layout.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingVertical="14dp">
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="15dp"
+            android:background="#009688" />
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="常用工具"
+            android:textStyle="bold" />
+
+        <com.hjq.shape.view.ShapeTextView
+            app:shape_radius="8dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:paddingVertical="2dp"
+            android:paddingHorizontal="5dp"
+            app:shape_solidColor="#4CAF50"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/tools_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15个工具"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tools_list"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_tools"
+        app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp" />
+
+</com.hjq.shape.layout.ShapeLinearLayout>

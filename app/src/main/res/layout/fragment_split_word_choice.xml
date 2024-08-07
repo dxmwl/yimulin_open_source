@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:shape_radius="15dp"
+        app:shape_solidColor="@color/white"
+        app:shape_strokeColor="#ccc"
+        app:shape_strokeWidth="0.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入内容" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+        <EditText
+            android:id="@+id/input_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="在这里输入内容"
+            android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/clean_content"
+                android:src="@drawable/icon_del_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </com.hjq.shape.layout.ShapeLinearLayout>
+
+    <com.hjq.shape.view.ShapeButton
+        android:id="@+id/start_splitting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="开始拆分"
+        android:textColor="@color/white"
+        app:shape_radius="5dp"
+        app:shape_solidColor="@color/common_accent_color" />
+
+    <com.hjq.shape.layout.ShapeRecyclerView
+        android:id="@+id/word_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp"
+        app:shape_radius="15dp"
+        app:shape_solidColor="@color/white"
+        app:shape_strokeColor="#ccc"
+        app:shape_strokeWidth="0.5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hjq.shape.view.ShapeTextView
+            android:text="复制选中的"
+            android:id="@+id/copy_text"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginHorizontal="15dp"
+            android:textColor="@color/white"
+            app:shape_radius="5dp"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            app:shape_solidColor="@color/common_accent_color"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

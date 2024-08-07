@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:background="#4CAF50" />
+
+        <ImageView
+            android:id="@+id/line_jiantou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_jiantou_right"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/line_start_or_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="#4CAF50"
+            android:padding="1dp"
+            android:text="起"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/platform_name"
+        android:layout_marginTop="12dp"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="1"
+        android:text="经三路站" />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:src="@drawable/icon_location_platform"
+        android:layout_width="15dp"
+        android:layout_height="15dp" />
+</LinearLayout>

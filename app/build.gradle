@@ -1,0 +1,381 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'io.github.wurensen.android-aspectjx'
+    id 'kotlin-kapt'
+    id 'mediation-auto-adapter'
+}
+apply from: '../common.gradle'
+apply plugin: 'com.jakewharton.butterknife'
+apply from: 'channel.gradle'
+
+// Android 代码规范文档：https://github.com/getActivity/AndroidCodeStandard
+android {
+
+    // 资源目录存放指引：https://developer.android.google.cn/guide/topics/resources/providing-resources
+    defaultConfig {
+
+        // 无痛修改包名：https://www.jianshu.com/p/17327e191d2e
+        applicationId 'com.yimulin.mobile'
+
+        // 仅保留中文语种的资源
+        resConfigs 'zh'
+
+        // 仅保留 xxhdpi 图片资源（目前主流分辨率 1920 * 1080）
+        resConfigs 'xxhdpi'
+
+        // 混淆配置
+        proguardFiles 'proguard-sdk.pro', 'proguard-app.pro'
+
+        // 日志打印开关
+        buildConfigField('boolean', 'LOG_ENABLE', '' + LOG_ENABLE + '')
+        // 测试包下的 BuglyId
+        buildConfigField('String', 'BUGLY_ID', '"' + BUGLY_ID + '"')
+        // 测试服务器的主机地址
+        buildConfigField('String', 'HOST_URL', '"' + HOST_URL + '"')
+        //存储桶
+        buildConfigField('String', 'BUCKET_NAME', '"' + BUCKET_NAME + '"')
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+    }
+
+    // Apk 签名的那些事：https://www.jianshu.com/p/a1f8e5896aa2
+    signingConfigs {
+        config {
+            storeFile file(StoreFile)
+            storePassword StorePassword
+            keyAlias KeyAlias
+            keyPassword KeyPassword
+        }
+    }
+
+    // 构建配置：https://developer.android.google.cn/studio/build/build-variants
+    buildTypes {
+
+        debug {
+            // 给包名添加后缀
+            applicationIdSuffix '.debug'
+            // 调试模式开关
+            debuggable true
+            jniDebuggable true
+            // 压缩对齐开关
+            zipAlignEnabled false
+            // 移除无用的资源
+            shrinkResources false
+            // 代码混淆开关
+            minifyEnabled false
+            // 签名信息配置
+            signingConfig signingConfigs.config
+            // 添加清单占位符
+            addManifestPlaceholders([
+                    'app_name': '一木林 Debug 版'
+            ])
+            // 调试模式下只保留一种架构的 so 库，提升打包速度
+            ndk {
+                abiFilters 'arm64-v8a'
+            }
+        }
+
+        preview.initWith(debug)
+        preview {
+            applicationIdSuffix ''
+            // 添加清单占位符
+            addManifestPlaceholders([
+                    'app_name': '一木林 Preview 版'
+            ])
+        }
+
+        release {
+            // 调试模式开关
+            debuggable false
+            jniDebuggable false
+            // 压缩对齐开关
+            zipAlignEnabled true
+            // 移除无用的资源
+            shrinkResources true
+            // 代码混淆开关
+            minifyEnabled true
+            // 签名信息配置
+            signingConfig signingConfigs.config
+            // 添加清单占位符
+            addManifestPlaceholders([
+                    'app_name': '@string/app_name'
+            ])
+            // 仅保留两种架构的 so 库，根据 Bugly 统计得出
+            ndk {
+                // armeabi：万金油架构平台（占用率：0%）
+                // armeabi-v7a：曾经主流的架构平台（占用率：10%）
+                // arm64-v8a：目前主流架构平台（占用率：95%）
+//                abiFilters 'armeabi-v7a', 'arm64-v8a'
+                abiFilters 'arm64-v8a'
+            }
+        }
+    }
+
+    packagingOptions {
+        // 剔除这个包下的所有文件（不会移除签名信息）
+        exclude 'META-INF/*******'
+    }
+
+    // AOP 配置（exclude 和 include 二选一）
+    // 需要进行配置，否则就会引发冲突，具体表现为：
+    // 第一种：编译不过去，报错：java.util.zip.ZipException：Cause: zip file is empty
+    // 第二种：编译能过去，但运行时报错：ClassNotFoundException: Didn't find class on path: DexPathList
+    aspectjx {
+        // 排除一些第三方库的包名（Gson、 LeakCanary 和 AOP 有冲突）
+        // exclude 'androidx', 'com.google', 'com.squareup', 'org.apache', 'com.alipay', 'com.taobao', 'versions.9'
+        // 只对以下包名做 AOP 处理
+        include android.defaultConfig.applicationId
+    }
+
+    applicationVariants.all { variant ->
+        // apk 输出文件名配置
+        variant.outputs.all { output ->
+            outputFileName = 'Yimulin_' + variant.productFlavors[0].name + '_v' + variant.versionName + '_' + variant.versionCode + '_' + variant.buildType.name
+            if (variant.buildType.name == buildTypes.release.getName()) {
+                outputFileName += '_' + new Date().format('MMdd')
+            }
+            outputFileName += '.apk'
+        }
+    }
+}
+
+mediationAutoAdapter {
+    //自动适配adn 所有adn adapter，默认值为true，如果为false脚本功能全部关闭
+    autoUpdate true
+    //如果不想全部自动适配，可选择此项，默认值为空[]，可以不填写
+    //如果autoUpdate设置成false，此项不生效，不会自动适配adn adapter
+    //如果autoUpdate设置成true，autoUpdateAdn配置了adn，则生效配置的adn。
+    //autoUpdateAdn没有配置adn，自动适配所有的adn
+    autoUpdateAdn = ["gdt", "baidu", "ks"]
+}
+
+// 添加构建依赖项：https://developer.android.google.cn/studio/build/dependencies
+// api 与 implementation 的区别：https://www.jianshu.com/p/8962d6ba936e
+dependencies {
+    // 基类封装
+    implementation project(':library:base')
+    // 控件封装
+    implementation project(':library:widget')
+    // 友盟封装
+    implementation project(':library:umeng')
+
+    implementation "androidx.core:core-ktx:1.2.0"
+
+    // 权限请求框架：https://github.com/getActivity/XXPermissions
+    implementation 'com.github.getActivity:XXPermissions:18.5'
+
+    // 网络请求框架：https://github.com/getActivity/EasyHttp
+    implementation 'com.github.getActivity:EasyHttp:11.0'
+    // OkHttp 框架：https://github.com/square/okhttp
+    // noinspection GradleDependency
+    implementation 'com.squareup.okhttp3:okhttp:3.12.13'
+
+    // Json 解析框架：https://github.com/google/gson
+    implementation 'com.google.code.gson:gson:2.10'
+    // Gson 解析容错：https://github.com/getActivity/GsonFactory
+    implementation 'com.github.getActivity:GsonFactory:6.3'
+
+    // AOP 插件库：https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+    implementation 'org.aspectj:aspectjrt:1.9.6'
+
+    // 图片加载框架：https://github.com/bumptech/glide
+    // 官方使用文档：https://github.com/Muyangmin/glide-docs-cn
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // 手势 ImageView：https://github.com/Baseflow/PhotoView
+    implementation 'com.github.Baseflow:PhotoView:2.3.0'
+
+    // Bugly 异常捕捉：https://bugly.qq.com/docs/user-guide/instruction-manual-android/?v=20190418140644
+    implementation 'com.tencent.bugly:crashreport:3.4.4'
+    implementation 'com.tencent.bugly:nativecrashreport:3.9.2'
+
+    // 上拉刷新下拉加载框架：https://github.com/scwang90/SmartRefreshLayout
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+    implementation 'com.scwang.smart:refresh-header-material:2.0.3'
+
+    // 日志打印框架：https://github.com/JakeWharton/timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // 指示器框架：https://github.com/ongakuer/CircleIndicator
+    implementation 'me.relex:circleindicator:2.1.6'
+
+    // 腾讯 MMKV：https://github.com/Tencent/MMKV
+    implementation 'com.tencent:mmkv-static:1.2.10'
+
+    // 内存泄漏监测框架：https://github.com/square/leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+    previewImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    //流式布局
+    implementation 'com.google.android:flexbox:2.0.1'
+
+    //ROOM数据库 https://developer.android.google.cn/jetpack/androidx/releases/room?hl=zh-cn
+    def room_version = "2.4.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    //工具库 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+    implementation 'com.blankj:utilcodex:1.31.1'
+
+    //潘多拉工具箱 https://gitee.com/clbDream/pdl-box_tools
+    implementation 'com.gitee.clbDream:pdl-box_tools:1.3.18'
+
+    // 标题栏框架：https://github.com/getActivity/TitleBar
+    implementation 'com.github.getActivity:TitleBar:9.2'
+
+    // 吐司框架：https://github.com/getActivity/ToastUtils
+    implementation 'com.github.getActivity:ToastUtils:9.5'
+
+    // 吐司框架：https://github.com/getActivity/Toaster
+//    implementation 'com.github.getActivity:Toaster:12.6'
+
+    // Shape 框架：https://github.com/getActivity/ShapeView
+    implementation 'com.github.getActivity:ShapeView:8.5'
+
+    // 沉浸式框架：https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    // 动画解析库：https://github.com/airbnb/lottie-android
+    // 动画资源：https://lottiefiles.com、https://icons8.com/animated-icons
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    implementation 'com.squareup.okio:okio:2.1.0'
+
+    // Android-PickerView https://github.com/Bigkoo/Android-PickerView
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+    //https://github.com/shouzhong/Scanner
+    implementation 'com.shouzhong:Scanner:1.1.3'
+
+    // zxing
+    implementation 'com.google.zxing:core:3.3.3'
+// zbar
+    implementation 'com.shouzhong:ScannerZBarLib:1.0.0'
+// 银行卡识别
+    implementation 'com.shouzhong:ScannerBankCardLib:1.0.3'
+// 身份证识别
+    implementation 'com.shouzhong:ScannerIdCardLib:1.0.4'
+// 车牌识别
+    implementation 'com.shouzhong:ScannerLicensePlateLib:1.0.3'
+// 图片文字识别
+    implementation 'com.shouzhong:ScannerTextLib:1.0.0'
+// 黄图识别
+    implementation 'com.shouzhong:ScannerNsfwLib:1.0.0'
+// 驾驶证识别
+    implementation 'com.shouzhong:ScannerDrivingLicenseLib:1.0.1'
+// 身份证识别（第二种方式）
+    implementation 'com.shouzhong:ScannerIdCard2Lib:1.0.0'
+
+    // PictureSelector 基础 (必须) https://github.com/LuckSiege/PictureSelector/blob/version_component/README_CN.md
+    implementation 'io.github.lucksiege:pictureselector:v3.11.2'
+    // 图片压缩 (按需引入)
+    implementation 'io.github.lucksiege:compress:v3.11.2'
+    // 图片裁剪 (按需引入)
+    implementation 'io.github.lucksiege:ucrop:v3.11.2'
+
+    implementation 'com.pihat:circleprogress:0.91'
+
+    //统计图 https://github.com/PhilJay/MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'com.github.shaoshuai904:XStyleDialog:2.0.4'
+    implementation files('libs\\achartengine-1.1.0.jar')
+
+    //https://lbs.amap.com/api/android-sdk/guide/create-project/android-studio-create-project
+    //3D地图so及jar
+    implementation 'com.amap.api:3dmap:latest.integration'
+    //定位功能
+//    api 'com.amap.api:location:latest.integration'
+    //搜索功能
+    implementation 'com.amap.api:search:9.7.0'
+
+    //结巴分词 https://github.com/452896915/jieba-android
+    implementation 'jackmego.com.jieba_android:jieba_android-release:0.1.0'
+
+    //圆角图片 https://github.com/vinc3m1/RoundedImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //视频播放器 https://github.com/google/ExoPlayer
+    implementation "com.google.android.exoplayer:exoplayer:2.18.0"
+
+    //弹窗 https://github.com/li-xiaojun/XPopup
+    implementation('com.github.li-xiaojun:XPopup:2.9.18') {
+        exclude group: "com.davemorrissey.labs", module: "subsampling-scale-" +
+                "" +
+                "-view-androidx"
+    }
+
+    //腾讯云COS https://cloud.tencent.com/document/product/436/12159
+    implementation 'com.qcloud.cos:cos-android:5.9.+'
+
+    implementation 'cn.bingoogolapple:bga-photopicker:2.0.2'
+    implementation 'cn.bingoogolapple:bga-baseadapter:2.0.0@aar'
+
+//    implementation 'com.github.MZCretin:WheelSurfDemo:v1.1.0'
+
+    //htextview 用于显示彩虹字体
+    implementation "com.hanks:htextview-base:0.1.6"
+    implementation "com.hanks:htextview-rainbow:0.1.6"
+
+    //colorpicker 色彩选择器
+    implementation "com.github.QuadFlask:colorpicker:0.0.15"
+
+    //分贝仪 https://github.com/dyzs/CompassServant
+    implementation('com.dyzs.compassservant:compassservant:1.0.0') {
+        exclude(group: 'com.jfrog.bintray.gradle')
+    }
+
+    //banner https://github.com/youth5201314/banner
+    implementation 'io.github.youth5201314:banner:2.2.2'
+
+    //穿山甲广告 https://www.csjplatform.com/union/media/union/quicksdk/?sdk_name=csj&platform=android&version=5.7.0.5
+    implementation "com.pangle.cn:mediation-sdk:5.9.0.8"  //融合SDK
+
+    implementation "com.pangle.cn:mediation-ks-adapter:3.3.57.0"//ks adapter
+
+    implementation "com.pangle.cn:mediation-gdt-adapter:4.561.1431.0" //gdt adapter
+
+    implementation "com.pangle.cn:mediation-baidu-adapter:9.332.0"//baidu adapter
+
+    //穿山甲AppLog https://www.csjplatform.com/union/media/union/growth/applog/content/5465946
+    implementation 'com.bytedance.applog:RangersAppLog-Lite-cn:6.15.3'
+
+    //为保证兼容性 建议使用广告SDK版本
+//    implementation 'com.pangle.cn:ads-sdk-pro:5.6.1.5'
+    implementation('com.pangle.cn:pangrowth-sdk:4.1.1.0') {
+        exclude group: 'com.pangle.cn', module: 'partner-live-sdk'
+        exclude group: 'com.pangle.cn', module: 'pangrowth-novel-sdk'
+        exclude group: 'com.pangle.cn', module: 'pangrowth-game-sdk'
+        exclude group: 'com.pangle.cn', module: 'pangrowth-luckycat-sdk'
+        exclude group: 'com.pangle.cn', module: 'pangrowth-reward-sdk'
+        exclude group: 'com.pangle.cn', module: 'partner-luckycat-api-sdk'
+        exclude group: 'com.pangle.cn', module: 'pangrowth-luckycat-api'
+    }
+    implementation 'com.pangle.cn:pangrowth-djx-sdk:1.1.5.0'
+//    implementation 'com.pangle.cn:pangrowth-empay-sdk:1.1.5.0'
+
+    // 多语种：https://github.com/getActivity/MultiLanguages
+    // 悬浮窗：https://github.com/getActivity/XToast
+    // 日志输出：https://github.com/getActivity/Logcat
+    // 工具类：https://github.com/Blankj/AndroidUtilCode
+    // 轮播图：https://github.com/bingoogolapple/BGABanner-Android
+    // 二维码：https://github.com/bingoogolapple/BGAQRCode-Android
+    // 跑马灯：https://github.com/sunfusheng/MarqueeView
+    // 对象注解：https://www.jianshu.com/p/f1f888e4a35f
+    // 对象存储：https://github.com/leavesC/DoKV
+    // 多渠道打包：https://github.com/Meituan-Dianping/walle
+    // 设备唯一标识：http://msa-alliance.cn/col.jsp?id=120
+    // 嵌套滚动容器：https://github.com/donkingliang/ConsecutiveScroller
+    // 隐私调用监控：https://github.com/huage2580/PermissionMonitor
+}

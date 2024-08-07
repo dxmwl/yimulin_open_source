@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hjq.bar.TitleBar
+        android:visibility="gone"
+        android:id="@+id/titleBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="省钱宝" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar2"
+        app:srcCompat="@drawable/shengqianbao_img" />
+
+    <com.hjq.shape.layout.ShapeConstraintLayout
+        android:id="@+id/shapeConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:shape_radius="@dimen/dp_5"
+        app:shape_solidColor="#FFEAA9">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="省钱宝支持平台"
+            android:textColor="#7A4900"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="11dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_taobao"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <com.hjq.shape.view.ShapeEditText
+            android:id="@+id/shapeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="start"
+            android:hint="请将商品链接复制在这里,省钱宝将为您查询优惠信息"
+            android:lines="3"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:shape_radius="@dimen/dp_5"
+            app:shape_solidColor="@color/white" />
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/shapeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:paddingHorizontal="@dimen/dp_10"
+            android:paddingVertical="@dimen/dp_5"
+            android:text="查询优惠"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shapeEditText"
+            app:shape_solidColor="#EAAD52" />
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/clear_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_5"
+            android:text="清空"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintBottom_toBottomOf="@+id/shapeTextView"
+            app:layout_constraintEnd_toStartOf="@+id/shapeTextView"
+            app:layout_constraintTop_toTopOf="@+id/shapeTextView"
+            app:shape_solidColor="#fff" />
+    </com.hjq.shape.layout.ShapeConstraintLayout>
+
+    <com.hjq.shape.layout.ShapeConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shapeConstraintLayout"
+        app:shape_radius="@dimen/dp_5"
+        app:shape_solidColor="@color/white">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="12dp"
+            tools:text="dkgdflsjl;gjfsdl;gjdfs;lgjkdkgdflsjl;gjfsdl;gjdfs;lgjk" />
+
+        <View
+            android:id="@+id/view"
+            style="@style/HorizontalLineStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:layout_editor_absoluteX="12dp">
+
+            <com.hjq.shape.view.ShapeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:text="商品原价"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:shape_radius="@dimen/dp_3"
+                app:shape_solidColor="#F1F1F1" />
+
+            <TextView
+                android:id="@+id/yuanjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0.0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout1"
+            tools:layout_editor_absoluteX="12dp">
+
+            <com.hjq.shape.view.ShapeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:text="优惠券"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:shape_radius="@dimen/dp_3"
+                app:shape_solidColor="#F1F1F1" />
+
+            <TextView
+                android:id="@+id/youhuiquan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0.0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout2"
+            tools:layout_editor_absoluteX="12dp">
+
+            <com.hjq.shape.view.ShapeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_5"
+                android:text="实际支付"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:shape_radius="@dimen/dp_3"
+                app:shape_solidColor="#F1F1F1" />
+
+            <TextView
+                android:id="@+id/shiji_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0.0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+    </com.hjq.shape.layout.ShapeConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.hjq.shape.view.ShapeTextView
+            android:layout_width="0dp"
+            android:id="@+id/btn_share"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dp_5"
+            android:text="分享好友"
+            android:textColor="#714400"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:shape_radius="@dimen/dp_5"
+            app:shape_solidColor="#FFEDEB"
+            app:shape_strokeColor="#FF9800"
+            app:shape_strokeWidth="0.5dp" />
+
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/go_buy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dp_5"
+            android:text="立即购买省\n钱购"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:shape_radius="@dimen/dp_5"
+            app:shape_solidColor="#F8A832" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
