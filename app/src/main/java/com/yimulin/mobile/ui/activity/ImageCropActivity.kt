@@ -10,13 +10,13 @@ import android.os.Environment
 import android.provider.MediaStore
 import androidx.core.content.FileProvider
 import com.hjq.base.BaseActivity
+import com.hjq.permissions.Permission
+import com.tencent.bugly.crashreport.CrashReport
 import com.yimulin.mobile.R
 import com.yimulin.mobile.aop.Log
 import com.yimulin.mobile.aop.Permissions
 import com.yimulin.mobile.app.AppActivity
 import com.yimulin.mobile.other.AppConfig
-import com.hjq.permissions.Permission
-import com.tencent.bugly.crashreport.CrashReport
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -45,7 +45,13 @@ class ImageCropActivity : AppActivity() {
 
         @Log
         @Permissions(Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE)
-        fun start(activity: BaseActivity, file: File?, cropRatioX: Int, cropRatioY: Int, listener: OnCropListener?) {
+        fun start(
+            activity: BaseActivity,
+            file: File?,
+            cropRatioX: Int,
+            cropRatioY: Int,
+            listener: OnCropListener?
+        ) {
             val intent = Intent(activity, ImageCropActivity::class.java)
             intent.putExtra(INTENT_KEY_IN_SOURCE_IMAGE_PATH, file.toString())
             intent.putExtra(INTENT_KEY_IN_CROP_RATIO_X, cropRatioX)
@@ -63,11 +69,15 @@ class ImageCropActivity : AppActivity() {
                                 uri = data.getParcelableExtra(INTENT_KEY_OUT_FILE_URI)
                             }
                             if (uri != null && data != null) {
-                                listener.onSucceed(uri, data.getStringExtra(INTENT_KEY_OUT_FILE_NAME)!!)
+                                listener.onSucceed(
+                                    uri,
+                                    data.getStringExtra(INTENT_KEY_OUT_FILE_NAME)!!
+                                )
                             } else {
                                 listener.onCancel()
                             }
                         }
+
                         RESULT_ERROR -> {
                             var details: String? = null
                             if (data != null) {
@@ -78,6 +88,7 @@ class ImageCropActivity : AppActivity() {
                             }
                             listener.onError(details)
                         }
+
                         RESULT_CANCELED -> listener.onCancel()
                         else -> listener.onCancel()
                     }
@@ -168,10 +179,14 @@ class ImageCropActivity : AppActivity() {
                 Environment.DIRECTORY_DCIM + File.separator + subFolderName
             )
             // 生成一个新的 uri 路径
-            outputUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)!!
+            outputUri =
+                contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)!!
         } else {
-            val folderFile = File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_DCIM).toString() + File.separator + subFolderName)
+            val folderFile = File(
+                Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DCIM
+                ).toString() + File.separator + subFolderName
+            )
             if (!folderFile.isDirectory) {
                 folderFile.delete()
             }
@@ -190,9 +205,11 @@ class ImageCropActivity : AppActivity() {
             startActivityForResult(intent, object : OnActivityCallback {
                 override fun onActivityResult(resultCode: Int, data: Intent?) {
                     if (resultCode == RESULT_OK) {
-                        setResult(RESULT_OK, Intent()
+                        setResult(
+                            RESULT_OK, Intent()
                                 .putExtra(INTENT_KEY_OUT_FILE_URI, outputUri)
-                                .putExtra(INTENT_KEY_OUT_FILE_NAME, fileName))
+                                .putExtra(INTENT_KEY_OUT_FILE_NAME, fileName)
+                        )
                     } else {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                             // 删除这个 uri，避免重复占用
@@ -205,7 +222,13 @@ class ImageCropActivity : AppActivity() {
             })
         } catch (e: ActivityNotFoundException) {
             CrashReport.postCatchedException(e)
-            setResult(RESULT_ERROR, Intent().putExtra(INTENT_KEY_OUT_ERROR, getString(R.string.image_crop_error_not_support)))
+            setResult(
+                RESULT_ERROR,
+                Intent().putExtra(
+                    INTENT_KEY_OUT_ERROR,
+                    getString(R.string.image_crop_error_not_support)
+                )
+            )
             finish()
         }
     }
