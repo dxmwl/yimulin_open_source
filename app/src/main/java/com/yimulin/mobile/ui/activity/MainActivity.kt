@@ -21,6 +21,7 @@ import com.yimulin.mobile.ui.adapter.NavigationAdapter
 import com.yimulin.mobile.ui.dialog.StarAppDialog
 import com.yimulin.mobile.ui.fragment.LocalToolsFragment
 import com.yimulin.mobile.ui.fragment.OnlineToolsFragment
+import com.yimulin.mobile.ui.fragment.SettingFragment
 import com.yimulin.mobile.utils.CosManager
 
 /**
@@ -67,12 +68,12 @@ class MainActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
                     ContextCompat.getDrawable(this@MainActivity, R.drawable.home_home_selector)
                 )
             )
-//            addItem(
-//                NavigationAdapter.MenuItem(
-//                    getString(R.string.home_nav_found),
-//                    ContextCompat.getDrawable(this@MainActivity, R.drawable.home_found_selector)
-//                )
-//            )
+            addItem(
+                NavigationAdapter.MenuItem(
+                    getString(R.string.home_nav_setting),
+                    ContextCompat.getDrawable(this@MainActivity, R.drawable.home_found_selector)
+                )
+            )
             setOnNavigationListener(this@MainActivity)
             navigationView?.adapter = this
         }
@@ -84,7 +85,7 @@ class MainActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
 
         pagerAdapter = FragmentPagerAdapter<AppFragment<*>>(this).apply {
             addFragment(LocalToolsFragment.newInstance())
-//            addFragment(OnlineToolsFragment.newInstance())
+            addFragment(SettingFragment.newInstance())
             viewPager?.adapter = this
         }
         onNewIntent(intent)
