@@ -17,11 +17,11 @@
     <!--允许访问网络，必选权限-->
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!--允许获取精确位置，精准定位必选-->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--    &lt;!&ndash;允许获取精确位置，精准定位必选&ndash;&gt;-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
 
-    <!--允许获取粗略位置，粗略定位必选-->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--    &lt;!&ndash;允许获取粗略位置，粗略定位必选&ndash;&gt;-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
 
     <!--允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -36,10 +36,10 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <!--后台获取位置信息，若需后台定位则必选-->
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!--    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />-->
 
     <!--用于申请调用A-GPS模块,卫星定位加速-->
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />-->
 
     <!--允许写设备缓存，用于问题排查-->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -59,7 +59,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- 安装权限 -->
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission
+        android:name="android.permission.REQUEST_INSTALL_PACKAGES"
+        tools:node="remove" />
 
     <!-- 定位权限（用于 WebView 定位）-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
