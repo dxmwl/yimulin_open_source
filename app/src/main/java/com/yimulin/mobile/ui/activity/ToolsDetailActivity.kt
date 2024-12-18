@@ -12,14 +12,14 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.blankj.utilcode.util.ConvertUtils
 import com.blankj.utilcode.util.ScreenUtils
-import com.bytedance.sdk.djx.DJXSdk
-import com.bytedance.sdk.djx.interfaces.listener.IDJXDramaHomeListener
-import com.bytedance.sdk.djx.model.DJXDrama
-import com.bytedance.sdk.djx.model.DJXDramaDetailConfig
-import com.bytedance.sdk.djx.model.DJXDramaUnlockAdMode
-import com.bytedance.sdk.djx.params.DJXWidgetDramaHomeParams
-import com.bytedance.sdk.dp.DPSdk
-import com.bytedance.sdk.dp.DPWidgetGridParams
+//import com.bytedance.sdk.djx.DJXSdk
+//import com.bytedance.sdk.djx.interfaces.listener.IDJXDramaHomeListener
+//import com.bytedance.sdk.djx.model.DJXDrama
+//import com.bytedance.sdk.djx.model.DJXDramaDetailConfig
+//import com.bytedance.sdk.djx.model.DJXDramaUnlockAdMode
+//import com.bytedance.sdk.djx.params.DJXWidgetDramaHomeParams
+//import com.bytedance.sdk.dp.DPSdk
+//import com.bytedance.sdk.dp.DPWidgetGridParams
 import com.bytedance.sdk.openadsdk.AdSlot
 import com.bytedance.sdk.openadsdk.TTAdDislike
 import com.bytedance.sdk.openadsdk.TTAdNative
@@ -30,13 +30,13 @@ import com.hjq.base.BaseDialog
 import com.hjq.base.livebus.LiveDataBus
 import com.hjq.permissions.Permission
 import com.hjq.permissions.XXPermissions
-import com.hjq.umeng.Platform
-import com.hjq.umeng.UmengClient
-import com.hjq.umeng.UmengShare
+//import com.hjq.umeng.Platform
+//import com.hjq.umeng.UmengClient
+//import com.hjq.umeng.UmengShare
 import com.hjq.widget.view.ClearEditText
 import com.orhanobut.logger.Logger
-import com.umeng.socialize.media.UMImage
-import com.umeng.socialize.media.UMWeb
+//import com.umeng.socialize.media.UMImage
+//import com.umeng.socialize.media.UMWeb
 import com.yimulin.mobile.aop.SingleClick
 import com.yimulin.mobile.app.AppActivity
 import com.yimulin.mobile.ui.fragment.exchange.ExchangeFragment
@@ -48,15 +48,16 @@ import com.yimulin.mobile.ui.fragment.MorseCodeFragment
 import com.yimulin.mobile.ui.fragment.RsaEncryptFragment
 import com.yimulin.mobile.ui.fragment.ScannerFragment
 import com.yimulin.mobile.ui.fragment.ScannerTextFragment
-import com.yimulin.mobile.ui.fragment.LocationInfoFragment
-import com.yimulin.mobile.ui.fragment.RouteLookupFragment
+//import com.yimulin.mobile.ui.fragment.LocationInfoFragment
+//import com.yimulin.mobile.ui.fragment.RouteLookupFragment
 import com.yimulin.mobile.R
 import com.yimulin.mobile.other.PermissionInterceptor
 import com.yimulin.mobile.ui.dialog.MessageDialog
-import com.yimulin.mobile.ui.dialog.ShareDialog
+//import com.yimulin.mobile.ui.dialog.ShareDialog
 import com.yimulin.mobile.ui.fragment.*
 import com.yimulin.mobile.ui.fragment.ZipCodeInquiryFragment
-import com.yimulin.mobile.utils.djUtils.DJXHolder
+//import com.yimulin.mobile.utils.djUtils.DJXHolder
+import okhttp3.internal.platform.Platform
 
 
 /**
@@ -190,21 +191,21 @@ class ToolsDetailActivity : AppActivity() {
     }
 
     private fun showShareDialog() {
-        val umImage = UMImage(
-            this, ConvertUtils.drawable2Bytes(
-                ContextCompat.getDrawable(this, R.mipmap.ic_launcher)
-            )
-        )
-        val umWeb =
-            UMWeb("https://www.pgyer.com/v1AgFH", "一木林", "你想要的工具，这里都有", umImage)
-        ShareDialog.Builder(this)
-            .setShareLink(umWeb)
-            .setListener(object : UmengShare.OnShareListener {
-                override fun onSucceed(platform: Platform?) {
-
-                }
-            })
-            .show()
+//        val umImage = UMImage(
+//            this, ConvertUtils.drawable2Bytes(
+//                ContextCompat.getDrawable(this, R.mipmap.ic_launcher)
+//            )
+//        )
+//        val umWeb =
+//            UMWeb("https://www.pgyer.com/v1AgFH", "一木林", "你想要的工具，这里都有", umImage)
+//        ShareDialog.Builder(this)
+//            .setShareLink(umWeb)
+//            .setListener(object : UmengShare.OnShareListener {
+//                override fun onSucceed(platform: Platform?) {
+//
+//                }
+//            })
+//            .show()
     }
 
     @SingleClick
@@ -331,10 +332,10 @@ class ToolsDetailActivity : AppActivity() {
                 CompanyBlackListFragment()
             }
 
-            4006 -> {
-                //购物优惠查询
-                ShengqianbaoFragment()
-            }
+//            4006 -> {
+//                //购物优惠查询
+//                ShengqianbaoFragment()
+//            }
 
             7001 -> {
                 //图片文本
@@ -386,20 +387,20 @@ class ToolsDetailActivity : AppActivity() {
                 HeightPredictionFragment()
             }
 
-            9001 -> {
-                //定位信息获取
-                LocationInfoFragment()
-            }
-
-            9002 -> {
-                //路线查询
-                RouteLookupFragment()
-            }
-
-            9003 -> {
-                //坐标拾取
-                CoordinatePickingFragment()
-            }
+//            9001 -> {
+//                //定位信息获取
+//                LocationInfoFragment()
+//            }
+//
+//            9002 -> {
+//                //路线查询
+//                RouteLookupFragment()
+//            }
+//
+//            9003 -> {
+//                //坐标拾取
+//                CoordinatePickingFragment()
+//            }
 
             10001 -> {
                 //汇率计算器
@@ -431,53 +432,53 @@ class ToolsDetailActivity : AppActivity() {
                 QQForcedConversationFragment()
             }
 
-            14001 -> {
-                //摸鱼日历
-                TouchFishCalendarFragment()
-            }
+//            14001 -> {
+//                //摸鱼日历
+//                TouchFishCalendarFragment()
+//            }
+//
+//            14002 -> {
+//                //摸鱼日报
+//                TouchingTheFishDailyFragment()
+//            }
+//
+//            14003 -> {
+//                //明星八卦
+//                StarGossipFragment()
+//            }
+//
+//            14004 -> {
+//                //内涵段子
+//                JokeFragment()
+//            }
+//
+//            14005 -> {
+//                //新闻简报
+//                NewsBriefFragment()
+//            }
+//
+//            14006 -> {
+//                //情感花园
+//                EmotionGardenFragment()
+//            }
+//
+//            14007 -> {
+//                //星座运势
+//                StarHoroscopeFragment()
+//            }
 
-            14002 -> {
-                //摸鱼日报
-                TouchingTheFishDailyFragment()
-            }
-
-            14003 -> {
-                //明星八卦
-                StarGossipFragment()
-            }
-
-            14004 -> {
-                //内涵段子
-                JokeFragment()
-            }
-
-            14005 -> {
-                //新闻简报
-                NewsBriefFragment()
-            }
-
-            14006 -> {
-                //情感花园
-                EmotionGardenFragment()
-            }
-
-            14007 -> {
-                //星座运势
-                StarHoroscopeFragment()
-            }
-
-            15004 -> {
-                if (DJXSdk.isStartSuccess().not()) {
-                    Logger.e("短视频SDK初始化未完成")
-                    return
-                }
-                DJXHolder.loadDramaHome(object : IDJXDramaHomeListener() {
-
-                }).fragment
-            }
-            15005 -> {
-                DPSdk.factory().createDoubleFeed(DPWidgetGridParams.obtain()).fragment
-            }
+//            15004 -> {
+//                if (DJXSdk.isStartSuccess().not()) {
+//                    Logger.e("短视频SDK初始化未完成")
+//                    return
+//                }
+//                DJXHolder.loadDramaHome(object : IDJXDramaHomeListener() {
+//
+//                }).fragment
+//            }
+//            15005 -> {
+//                DPSdk.factory().createDoubleFeed(DPWidgetGridParams.obtain()).fragment
+//            }
 
             else -> {
                 EmptyFragment()
@@ -606,6 +607,6 @@ class ToolsDetailActivity : AppActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        UmengClient.onActivityResult(this, requestCode, resultCode, data)
+//        UmengClient.onActivityResult(this, requestCode, resultCode, data)
     }
 }

@@ -1,0 +1,14 @@
+apply plugin : 'com.android.library'
+apply from : '../../common.gradle'
+
+android {
+	defaultConfig {
+		// 模块混淆配置
+		consumerProguardFiles 'proguard-rules.pro'
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation 'androidx.appcompat:appcompat:1.1.0'
+}

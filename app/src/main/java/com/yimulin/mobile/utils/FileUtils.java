@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 
-import com.hjq.umeng.BuildConfig;
+//import com.hjq.umeng.BuildConfig;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -52,7 +52,7 @@ public class FileUtils {
 
     public static final String DOCUMENTS_DIR = "documents";
     // configured android:authorities in AndroidManifest (https://developer.android.com/reference/android/support/v4/content/FileProvider)
-    public static final String AUTHORITY = BuildConfig.LIBRARY_PACKAGE_NAME + ".provider";
+    public static final String AUTHORITY = "ss.provider";
     public static final String HIDDEN_PREFIX = ".";
     private static final boolean DEBUG = false; // Set to true to enable logging
     /**

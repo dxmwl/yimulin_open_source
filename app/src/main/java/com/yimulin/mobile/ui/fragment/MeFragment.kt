@@ -13,8 +13,8 @@ import com.hjq.http.EasyHttp
 import com.hjq.http.listener.OnHttpListener
 import com.hjq.shape.view.ShapeTextView
 import com.pdlbox.tools.utils.GlideUtils
-import com.tencent.mm.opensdk.modelbase.BaseReq
-import com.tencent.mm.opensdk.openapi.WXAPIFactory
+//import com.tencent.mm.opensdk.modelbase.BaseReq
+//import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import com.yimulin.mobile.R
 import com.yimulin.mobile.aop.SingleClick
 import com.yimulin.mobile.app.AppActivity
@@ -24,7 +24,7 @@ import com.yimulin.mobile.http.api.UserInfoApi.UserInfoDto
 import com.yimulin.mobile.http.model.HttpData
 import com.yimulin.mobile.manager.UserManager
 import com.yimulin.mobile.ui.activity.LoginActivity
-import com.yimulin.mobile.ui.activity.MemberCenterActivity
+//import com.yimulin.mobile.ui.activity.MemberCenterActivity
 import com.yimulin.mobile.ui.activity.ReportActivity
 import com.yimulin.mobile.ui.activity.SettingActivity
 import com.yimulin.mobile.ui.activity.UserFeedbackActivity
@@ -149,7 +149,7 @@ class MeFragment : AppFragment<AppActivity>() {
                     startActivity(LoginActivity::class.java)
                     return
                 }
-                startActivity(MemberCenterActivity::class.java)
+//                startActivity(MemberCenterActivity::class.java)
             }
 
             R.id.kefu_online -> {

@@ -10,14 +10,15 @@ import com.yimulin.mobile.R
 import com.yimulin.mobile.aop.SingleClick
 import com.yimulin.mobile.manager.DialogManager
 import com.yimulin.mobile.ui.popup.ListPopup
-import com.hjq.umeng.Platform
-import com.hjq.umeng.UmengClient
-import com.hjq.umeng.UmengShare.OnShareListener
-import com.umeng.socialize.media.UMImage
-import com.umeng.socialize.media.UMWeb
+//import com.hjq.umeng.Platform
+//import com.hjq.umeng.UmengClient
+//import com.hjq.umeng.UmengShare.OnShareListener
+//import com.umeng.socialize.media.UMImage
+//import com.umeng.socialize.media.UMWeb
 import com.yimulin.mobile.ui.dialog.WaitDialog
 import com.yimulin.mobile.app.AppActivity
 import com.yimulin.mobile.ui.dialog.*
+import okhttp3.internal.platform.Platform
 import java.util.*
 
 /**
@@ -384,30 +385,30 @@ class DialogActivity : AppActivity() {
             }
             R.id.btn_dialog_share -> {
 
-                toast("记得改好第三方 AppID 和 Secret，否则会调不起来哦")
-                val content = UMWeb("https://github.com/getActivity/AndroidProject-Kotlin")
-                content.title = "Github"
-                content.setThumb(UMImage(this, R.mipmap.ic_launcher))
-                content.description = getString(R.string.app_name)
-
-                // 分享对话框
-                ShareDialog.Builder(this)
-                    .setShareLink(content)
-                    .setListener(object : OnShareListener {
-
-                        override fun onSucceed(platform: Platform?) {
-                            toast("分享成功")
-                        }
-
-                        override fun onError(platform: Platform?, t: Throwable) {
-                            toast(t.message)
-                        }
-
-                        override fun onCancel(platform: Platform?) {
-                            toast("分享取消")
-                        }
-                    })
-                    .show()
+//                toast("记得改好第三方 AppID 和 Secret，否则会调不起来哦")
+//                val content = UMWeb("https://github.com/getActivity/AndroidProject-Kotlin")
+//                content.title = "Github"
+//                content.setThumb(UMImage(this, R.mipmap.ic_launcher))
+//                content.description = getString(R.string.app_name)
+//
+//                // 分享对话框
+//                ShareDialog.Builder(this)
+//                    .setShareLink(content)
+//                    .setListener(object : OnShareListener {
+//
+//                        override fun onSucceed(platform: Platform?) {
+//                            toast("分享成功")
+//                        }
+//
+//                        override fun onError(platform: Platform?, t: Throwable) {
+//                            toast(t.message)
+//                        }
+//
+//                        override fun onCancel(platform: Platform?) {
+//                            toast("分享取消")
+//                        }
+//                    })
+//                    .show()
 
             }
             R.id.btn_dialog_update -> {
@@ -536,6 +537,6 @@ class DialogActivity : AppActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // 友盟回调
-        UmengClient.onActivityResult(this, requestCode, resultCode, data)
+//        UmengClient.onActivityResult(this, requestCode, resultCode, data)
     }
 }

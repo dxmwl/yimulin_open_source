@@ -23,8 +23,8 @@ import com.hjq.base.BaseDialog
 import com.hjq.http.EasyConfig
 import com.hjq.http.EasyHttp
 import com.hjq.http.listener.OnHttpListener
-import com.hjq.umeng.Platform
-import com.hjq.umeng.UmengClient
+//import com.hjq.umeng.Platform
+//import com.hjq.umeng.UmengClient
 import com.hjq.widget.view.CountdownView
 import com.hjq.widget.view.SubmitButton
 import com.yimulin.mobile.aop.SingleClick
@@ -43,6 +43,7 @@ import com.yimulin.mobile.other.AppConfig
 import com.yimulin.mobile.other.KeyboardWatcher
 import com.yimulin.mobile.ui.dialog.MessageDialog
 import okhttp3.Call
+import okhttp3.internal.platform.Platform
 
 /**
  *    author : Android 轮子哥
@@ -134,14 +135,14 @@ class LoginActivity : AppActivity(),
         }, 500)
 
         // 判断用户当前有没有安装 QQ
-        if (!UmengClient.isAppInstalled(this, Platform.QQ)) {
-            qqView?.visibility = View.GONE
-        }
-
-        // 判断用户当前有没有安装微信
-        if (!UmengClient.isAppInstalled(this, Platform.WECHAT)) {
-            weChatView?.visibility = View.GONE
-        }
+//        if (!UmengClient.isAppInstalled(this, Platform.QQ)) {
+//            qqView?.visibility = View.GONE
+//        }
+//
+//        // 判断用户当前有没有安装微信
+//        if (!UmengClient.isAppInstalled(this, Platform.WECHAT)) {
+//            weChatView?.visibility = View.GONE
+//        }
 
         // 如果这两个都没有安装就隐藏提示
         if (qqView?.visibility == View.GONE && weChatView?.visibility == View.GONE) {
@@ -234,19 +235,19 @@ class LoginActivity : AppActivity(),
         if (view === qqView || view === weChatView) {
             val platform: Platform?
             when {
-                view === qqView -> {
-                    platform = Platform.QQ
-                }
-                view === weChatView -> {
-                    if (packageName.endsWith(".debug")) {
-                        toast("当前 buildType 不支持进行微信登录")
-                        return
-                    }
-                    platform = Platform.WECHAT
-                }
-                else -> {
-                    throw IllegalStateException("are you ok?")
-                }
+//                view === qqView -> {
+//                    platform = Platform.QQ
+//                }
+//                view === weChatView -> {
+//                    if (packageName.endsWith(".debug")) {
+//                        toast("当前 buildType 不支持进行微信登录")
+//                        return
+//                    }
+//                    platform = Platform.WECHAT
+//                }
+//                else -> {
+//                    throw IllegalStateException("are you ok?")
+//                }
             }
             if (cb_xieyi?.isChecked == false) {
                 MessageDialog.Builder(this)

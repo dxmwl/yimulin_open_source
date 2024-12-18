@@ -67,12 +67,12 @@ class MainActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
                     ContextCompat.getDrawable(this@MainActivity, R.drawable.home_home_selector)
                 )
             )
-            addItem(
-                NavigationAdapter.MenuItem(
-                    getString(R.string.home_nav_found),
-                    ContextCompat.getDrawable(this@MainActivity, R.drawable.home_found_selector)
-                )
-            )
+//            addItem(
+//                NavigationAdapter.MenuItem(
+//                    getString(R.string.home_nav_found),
+//                    ContextCompat.getDrawable(this@MainActivity, R.drawable.home_found_selector)
+//                )
+//            )
             setOnNavigationListener(this@MainActivity)
             navigationView?.adapter = this
         }
@@ -84,7 +84,7 @@ class MainActivity : AppActivity(), NavigationAdapter.OnNavigationListener {
 
         pagerAdapter = FragmentPagerAdapter<AppFragment<*>>(this).apply {
             addFragment(LocalToolsFragment.newInstance())
-            addFragment(OnlineToolsFragment.newInstance())
+//            addFragment(OnlineToolsFragment.newInstance())
             viewPager?.adapter = this
         }
         onNewIntent(intent)

@@ -25,7 +25,7 @@ import com.hjq.http.config.IRequestInterceptor
 import com.hjq.http.model.HttpHeaders
 import com.hjq.http.model.HttpParams
 import com.hjq.toast.ToastUtils
-import com.hjq.umeng.UmengClient
+//import com.hjq.umeng.UmengClient
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
@@ -125,8 +125,8 @@ class AppApplication : Application() {
             CrashHandler.register(application)
 
             // 友盟统计、登录、分享 SDK
-            val channel = AppConfig.getChannel()
-            UmengClient.preInit(application, AppConfig.isLogEnable(), channel)
+//            val channel = AppConfig.getChannel()
+//            UmengClient.preInit(application, AppConfig.isLogEnable(), channel)
 
             // Activity 栈管理初始化
             ActivityManager.getInstance().init(application)

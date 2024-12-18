@@ -1,6 +1,6 @@
 package com.yimulin.mobile.app
 
-import com.amap.api.location.AMapLocation
+//import com.amap.api.location.AMapLocation
 
 /**
  * @project : Travel_without_worry
@@ -11,5 +11,5 @@ import com.amap.api.location.AMapLocation
 object AppManager {
 
     //定位信息
-    var locationInfo: AMapLocation? = null
+//    var locationInfo: AMapLocation? = null
 }

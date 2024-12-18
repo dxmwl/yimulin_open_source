@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'io.github.wurensen.android-aspectjx'
     id 'kotlin-kapt'
-    id 'mediation-auto-adapter'
+//    id 'mediation-auto-adapter'
 }
 apply from: '../common.gradle'
 apply plugin: 'com.jakewharton.butterknife'
@@ -144,15 +144,15 @@ android {
     }
 }
 
-mediationAutoAdapter {
-    //自动适配adn 所有adn adapter，默认值为true，如果为false脚本功能全部关闭
-    autoUpdate true
-    //如果不想全部自动适配，可选择此项，默认值为空[]，可以不填写
-    //如果autoUpdate设置成false，此项不生效，不会自动适配adn adapter
-    //如果autoUpdate设置成true，autoUpdateAdn配置了adn，则生效配置的adn。
-    //autoUpdateAdn没有配置adn，自动适配所有的adn
-    autoUpdateAdn = ["gdt", "baidu", "ks"]
-}
+//mediationAutoAdapter {
+//    //自动适配adn 所有adn adapter，默认值为true，如果为false脚本功能全部关闭
+//    autoUpdate true
+//    //如果不想全部自动适配，可选择此项，默认值为空[]，可以不填写
+//    //如果autoUpdate设置成false，此项不生效，不会自动适配adn adapter
+//    //如果autoUpdate设置成true，autoUpdateAdn配置了adn，则生效配置的adn。
+//    //autoUpdateAdn没有配置adn，自动适配所有的adn
+//    autoUpdateAdn = ["gdt", "baidu", "ks"]
+//}
 
 // 添加构建依赖项：https://developer.android.google.cn/studio/build/dependencies
 // api 与 implementation 的区别：https://www.jianshu.com/p/8962d6ba936e
@@ -162,7 +162,9 @@ dependencies {
     // 控件封装
     implementation project(':library:widget')
     // 友盟封装
-    implementation project(':library:umeng')
+//    implementation project(':library:umeng')
+    //颜色选择器
+    implementation project(':library:colorpicker')
 
     implementation "androidx.core:core-ktx:1.2.0"
 
@@ -294,11 +296,11 @@ dependencies {
 
     //https://lbs.amap.com/api/android-sdk/guide/create-project/android-studio-create-project
     //3D地图so及jar
-    implementation 'com.amap.api:3dmap:latest.integration'
+//    implementation 'com.amap.api:3dmap:latest.integration'
     //定位功能
 //    api 'com.amap.api:location:latest.integration'
     //搜索功能
-    implementation 'com.amap.api:search:9.7.0'
+//    implementation 'com.amap.api:search:9.7.0'
 
     //结巴分词 https://github.com/452896915/jieba-android
     implementation 'jackmego.com.jieba_android:jieba_android-release:0.1.0'
@@ -329,7 +331,7 @@ dependencies {
     implementation "com.hanks:htextview-rainbow:0.1.6"
 
     //colorpicker 色彩选择器
-    implementation "com.github.QuadFlask:colorpicker:0.0.15"
+//    implementation "com.github.QuadFlask:colorpicker:0.0.15"
 
     //分贝仪 https://github.com/dyzs/CompassServant
     implementation('com.dyzs.compassservant:compassservant:1.0.0') {
@@ -353,16 +355,16 @@ dependencies {
 
     //为保证兼容性 建议使用广告SDK版本
 //    implementation 'com.pangle.cn:ads-sdk-pro:5.6.1.5'
-    implementation('com.pangle.cn:pangrowth-sdk:4.1.1.0') {
-        exclude group: 'com.pangle.cn', module: 'partner-live-sdk'
-        exclude group: 'com.pangle.cn', module: 'pangrowth-novel-sdk'
-        exclude group: 'com.pangle.cn', module: 'pangrowth-game-sdk'
-        exclude group: 'com.pangle.cn', module: 'pangrowth-luckycat-sdk'
-        exclude group: 'com.pangle.cn', module: 'pangrowth-reward-sdk'
-        exclude group: 'com.pangle.cn', module: 'partner-luckycat-api-sdk'
-        exclude group: 'com.pangle.cn', module: 'pangrowth-luckycat-api'
-    }
-    implementation 'com.pangle.cn:pangrowth-djx-sdk:1.1.5.0'
+//    implementation('com.pangle.cn:pangrowth-sdk:4.1.1.0') {
+//        exclude group: 'com.pangle.cn', module: 'partner-live-sdk'
+//        exclude group: 'com.pangle.cn', module: 'pangrowth-novel-sdk'
+//        exclude group: 'com.pangle.cn', module: 'pangrowth-game-sdk'
+//        exclude group: 'com.pangle.cn', module: 'pangrowth-luckycat-sdk'
+//        exclude group: 'com.pangle.cn', module: 'pangrowth-reward-sdk'
+//        exclude group: 'com.pangle.cn', module: 'partner-luckycat-api-sdk'
+//        exclude group: 'com.pangle.cn', module: 'pangrowth-luckycat-api'
+//    }
+//    implementation 'com.pangle.cn:pangrowth-djx-sdk:1.1.5.0'
 //    implementation 'com.pangle.cn:pangrowth-empay-sdk:1.1.5.0'
 
     // 多语种：https://github.com/getActivity/MultiLanguages

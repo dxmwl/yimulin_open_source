@@ -2,48 +2,6 @@
   "version": 1,
   "data": [
     {
-      "className": "推荐工具",
-      "isLocal": true,
-      "classId": 14,
-      "children": [
-        {
-          "toolsId": 14001,
-          "toolsName": "摸鱼日历",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14002,
-          "toolsName": "摸鱼日报",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14003,
-          "toolsName": "明星八卦",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14004,
-          "toolsName": "内涵段子",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14005,
-          "toolsName": "新闻简报",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14006,
-          "toolsName": "情感花园",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14007,
-          "toolsName": "星座运势",
-          "isFullScreen": true
-        }
-      ]
-    },
-    {
       "className": "文字工具",
       "isLocal": true,
       "classId": 1,
@@ -126,42 +84,6 @@
         {
           "toolsId": 3003,
           "toolsName": "摩斯密码"
-        }
-      ]
-    },
-    {
-      "className": "查询工具",
-      "isLocal": false,
-      "classId": 4,
-      "children": [
-        {
-          "toolsId": 4001,
-          "toolsName": "邮编查询",
-          "isNeedSearch": true
-        },
-        {
-          "toolsId": 4002,
-          "toolsName": "公司黑名单",
-          "isNeedSearch": true
-        },
-        {
-          "toolsId": 4003,
-          "toolsName": "今日热榜",
-          "url": "http://web.sygjx.com/tool/jrrb/?bb=106"
-        },
-        {
-          "toolsId": 4004,
-          "toolsName": "全网热搜",
-          "url": "https://h5.mse.360.cn/24thresou.html#/"
-        },
-        {
-          "toolsId": 4005,
-          "toolsName": "元素周期表",
-          "url": "https://tool.lu/zh_CN/periodic/"
-        },
-        {
-          "toolsId": 4006,
-          "toolsName": "购物优惠查询"
         }
       ]
     },
@@ -268,29 +190,6 @@
       ]
     },
     {
-      "className": "图片工具",
-      "isLocal": true,
-      "classId": 7,
-      "children": [
-        {
-          "toolsId": 7003,
-          "toolsName": "条码识别"
-        },
-        {
-          "toolsId": 7004,
-          "toolsName": "二维码识别"
-        },
-        {
-          "toolsId": 7005,
-          "toolsName": "银行卡识别"
-        },
-        {
-          "toolsId": 7006,
-          "toolsName": "车牌识别"
-        }
-      ]
-    },
-    {
       "className": "计算工具",
       "isLocal": true,
       "classId": 8,
@@ -309,25 +208,6 @@
           "toolsId": 8003,
           "toolsName": "身高预测",
           "isFullScreen": false
-        }
-      ]
-    },
-    {
-      "className": "地图工具",
-      "isLocal": false,
-      "classId": 9,
-      "children": [
-        {
-          "toolsId": 9001,
-          "toolsName": "定位信息获取"
-        },
-        {
-          "toolsId": 9002,
-          "toolsName": "路线查询"
-        },
-        {
-          "toolsId": 9003,
-          "toolsName": "坐标拾取"
         }
       ]
     },
@@ -371,38 +251,6 @@
       ]
     },
     {
-      "className": "图片工具",
-      "isLocal": false,
-      "classId": 12,
-      "children": [
-        {
-          "toolsId": 12002,
-          "toolsName": "国旗头像制作",
-          "url": "http://web.sygjx.com/tool/gqtxzz/?bb=106"
-        },
-        {
-          "toolsId": 12003,
-          "toolsName": "以图搜图",
-          "url": "https://pic.sogou.com/pic/index.jsp?v=5"
-        },
-        {
-          "toolsId": 12004,
-          "toolsName": "图片变绿",
-          "url": "https://h5.codefuture.top/widgetbox-tools/image_patina"
-        },
-        {
-          "toolsId": 12005,
-          "toolsName": "颜色提取",
-          "url": "https://h5.codefuture.top/widgetbox-tools/color"
-        },
-        {
-          "toolsId": 12006,
-          "toolsName": "抖音风格文字生成",
-          "url": "https://h5.codefuture.top/widgetbox-tools/douyin_text"
-        }
-      ]
-    },
-    {
       "className": "其他工具",
       "isLocal": true,
       "classId": 13,
@@ -418,66 +266,6 @@
       "isLocal": false,
       "classId": 14,
       "children": [
-        {
-          "toolsId": 14001,
-          "toolsName": "摸鱼日历",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14002,
-          "toolsName": "摸鱼日报",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14003,
-          "toolsName": "明星八卦",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14004,
-          "toolsName": "内涵段子",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14005,
-          "toolsName": "新闻简报",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14006,
-          "toolsName": "情感花园",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14007,
-          "toolsName": "星座运势",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 14008,
-          "toolsName": "饿了么外卖优惠",
-          "url": "https://kzurl11.cn/72G7M8"
-        },
-        {
-          "toolsId": 14009,
-          "toolsName": "美团外卖优惠",
-          "url": "https://dpurl.cn/fgUImTOz"
-        },
-        {
-          "toolsId": 140010,
-          "toolsName": "全网会员充值",
-          "url": "https://7fmuxynp.jutuike.cn/#/pages/digital/index?code=7fmUxYnP&showMenu=false"
-        },
-        {
-          "toolsId": 140011,
-          "toolsName": "网名大全",
-          "url": "https://hanyu.baidu.com/s?wd=%E7%BD%91%E5%90%8D"
-        },
-        {
-          "toolsId": 140012,
-          "toolsName": "每日红包",
-          "url": "https://kurl03.cn/NXxbw"
-        },
         {
           "toolsId": 140013,
           "toolsName": "网络测速",
@@ -495,29 +283,7 @@
       "isLocal": false,
       "classId": 15,
       "children": [
-        {
-          "toolsId": 15001,
-          "toolsName": "烟花模拟器",
-          "url": "https://www.slcp.top/fireworks",
-          "isFullScreen": true,
-          "isNeedViewAd": true
-        },
-        {
-          "toolsId": 15003,
-          "toolsName": "表白网页制作",
-          "url": "http://bbwyzz.sygjx.com/?bb=106",
-          "isFullScreen": true,
-          "isNeedViewAd": true
-        },
-        {
-          "toolsId": 15004,
-          "toolsName": "热门短剧",
-          "isFullScreen": true
-        },
-        {
-          "toolsId": 15005,
-          "toolsName": "热门短视频"
-        }
+
       ]
     },
     {
