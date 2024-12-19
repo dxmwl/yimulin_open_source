@@ -20,11 +20,11 @@ import com.blankj.utilcode.util.ScreenUtils
 //import com.bytedance.sdk.djx.params.DJXWidgetDramaHomeParams
 //import com.bytedance.sdk.dp.DPSdk
 //import com.bytedance.sdk.dp.DPWidgetGridParams
-import com.bytedance.sdk.openadsdk.AdSlot
-import com.bytedance.sdk.openadsdk.TTAdDislike
-import com.bytedance.sdk.openadsdk.TTAdNative
-import com.bytedance.sdk.openadsdk.TTNativeExpressAd
-import com.bytedance.sdk.openadsdk.TTAdSdk
+//import com.bytedance.sdk.openadsdk.AdSlot
+//import com.bytedance.sdk.openadsdk.TTAdDislike
+//import com.bytedance.sdk.openadsdk.TTAdNative
+//import com.bytedance.sdk.openadsdk.TTNativeExpressAd
+//import com.bytedance.sdk.openadsdk.TTAdSdk
 import com.hjq.bar.TitleBar
 import com.hjq.base.BaseDialog
 import com.hjq.base.livebus.LiveDataBus
@@ -101,23 +101,23 @@ class ToolsDetailActivity : AppActivity() {
     private val input_keyword: ClearEditText? by lazy { findViewById(R.id.input_keyword) }
     private val bannerContainer: FrameLayout? by lazy { findViewById(R.id.ad_view) }
 
-    //@[classname]
-    private var bannerAd: TTNativeExpressAd? = null
-
-    //@[classname]
-    private var adNativeLoader: TTAdNative? = null
-
-    //@[classname]
-    private var adSlot: AdSlot? = null
-
-    //@[classname]
-    private var nativeExpressAdListener: TTAdNative.NativeExpressAdListener? = null
-
-    //@[classname]
-    private var expressAdInteractionListener: TTNativeExpressAd.ExpressAdInteractionListener? = null
-
-    //@[classname]
-    private var dislikeInteractionCallback: TTAdDislike.DislikeInteractionCallback? = null
+//    //@[classname]
+//    private var bannerAd: TTNativeExpressAd? = null
+//
+//    //@[classname]
+//    private var adNativeLoader: TTAdNative? = null
+//
+//    //@[classname]
+//    private var adSlot: AdSlot? = null
+//
+//    //@[classname]
+//    private var nativeExpressAdListener: TTAdNative.NativeExpressAdListener? = null
+//
+//    //@[classname]
+//    private var expressAdInteractionListener: TTNativeExpressAd.ExpressAdInteractionListener? = null
+//
+//    //@[classname]
+//    private var dislikeInteractionCallback: TTAdDislike.DislikeInteractionCallback? = null
 
     override fun getLayoutId(): Int {
         return R.layout.activity_tools_detail
@@ -162,10 +162,10 @@ class ToolsDetailActivity : AppActivity() {
     }
 
     override fun initData() {
-        val isFullScreen = getBoolean(IS_FULL_SCREEN)
-        if (!isFullScreen) {
-            loadAd()
-        }
+//        val isFullScreen = getBoolean(IS_FULL_SCREEN)
+//        if (!isFullScreen) {
+//            loadAd()
+//        }
     }
 
     override fun onLeftClick(view: View) {
@@ -489,121 +489,121 @@ class ToolsDetailActivity : AppActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
     }
 
-    private fun loadAd() {
-        bannerContainer?.removeAllViews()
-
-        /** 1、创建AdSlot对象 */
-        //@[classname]
-        adSlot = AdSlot.Builder()
-            .setCodeId("102636040")
-            .setImageAcceptedSize(ScreenUtils.getScreenWidth(), ConvertUtils.dp2px(75f)) // 单位px
-            .build()
-
-        /** 2、创建TTAdNative对象 */
-        //@[classname]//@[methodname]
-        adNativeLoader = TTAdSdk.getAdManager().createAdNative(this)
-
-        /** 3、创建加载、展示监听器 */
-        initListeners()
-
-        /** 4、加载广告 */
-        adNativeLoader?.loadBannerExpressAd(adSlot, nativeExpressAdListener)
-    }
-
-    private fun showAd() {
-        if (bannerAd == null) {
-            Logger.d("请先加载广告或等待广告加载完毕后再调用show方法")
-        }
-        bannerAd?.setExpressInteractionListener(expressAdInteractionListener)
-        bannerAd?.setDislikeCallback(this@ToolsDetailActivity, dislikeInteractionCallback)
-
-        /** 注意：使用融合功能时，load成功后可直接调用getExpressAdView获取广告view展示，而无需调用render等onRenderSuccess后 */
-        val bannerView: View? = bannerAd?.expressAdView
-        if (bannerView != null) {
-            bannerContainer?.removeAllViews()
-            bannerContainer?.visibility = View.VISIBLE
-            bannerContainer?.addView(bannerView)
-        }
-    }
-
-    private fun initListeners() {
-        // 广告加载监听器
-        //@[classname]
-        nativeExpressAdListener = object : TTAdNative.NativeExpressAdListener {
-            //@[classname]
-            override fun onNativeExpressAdLoad(ads: MutableList<TTNativeExpressAd>?) {
-                if (ads != null) {
-                    Logger.d("banner load success: " + ads.size)
-                }
-                ads?.let {
-                    if (it.size > 0) {
-                        //@[classname]
-                        val ad: TTNativeExpressAd = it[0]
-                        bannerAd = ad
-                    }
-                }
-                showAd()
-            }
-
-            override fun onError(code: Int, message: String?) {
-                Logger.d("banner load fail: $code, $message")
-            }
-        }
-        // 广告展示监听器
-        expressAdInteractionListener = object :
-        //@[classname]
-            TTNativeExpressAd.ExpressAdInteractionListener {
-            override fun onAdClicked(view: View?, type: Int) {
-                Logger.d("banner clicked")
-            }
-
-            override fun onAdShow(view: View?, type: Int) {
-                Logger.d("banner show")
-            }
-
-            override fun onRenderFail(view: View?, msg: String?, code: Int) {
-                // 注意：使用融合功能时，无需调用render，load成功后可调用mBannerAd.getExpressAdView()进行展示。
-            }
-
-            override fun onRenderSuccess(view: View?, width: Float, height: Float) {
-                // 注意：使用融合功能时，无需调用render，load成功后可调用mBannerAd.getExpressAdView()获取view进行展示。
-                // 如果调用了render，则会直接回调onRenderSuccess，***** 参数view为null，请勿使用。*****
-            }
-        }
-
-        // dislike监听器，广告关闭时会回调onSelected
-        //@[classname]
-        dislikeInteractionCallback = object : TTAdDislike.DislikeInteractionCallback {
-            override fun onShow() {
-                Logger.d("banner dislike show")
-            }
-
-            override fun onSelected(
-                position: Int,
-                value: String?,
-                enforce: Boolean
-            ) {
-                bannerContainer?.visibility = View.GONE
-                Logger.d("banner dislike closed")
-                bannerContainer?.removeAllViews()
-            }
-
-            override fun onCancel() {
-                Logger.d("banner dislike cancel")
-            }
-        }
-    }
-
-
-    override fun isStatusBarEnabled(): Boolean {
-        return getBoolean(IS_FULL_SCREEN)
-    }
-
-    // 销毁广告
-    override fun onDestroy() {
-        super.onDestroy()
-        bannerAd?.destroy()
-    }
+//    private fun loadAd() {
+//        bannerContainer?.removeAllViews()
+//
+//        /** 1、创建AdSlot对象 */
+//        //@[classname]
+//        adSlot = AdSlot.Builder()
+//            .setCodeId("102636040")
+//            .setImageAcceptedSize(ScreenUtils.getScreenWidth(), ConvertUtils.dp2px(75f)) // 单位px
+//            .build()
+//
+//        /** 2、创建TTAdNative对象 */
+//        //@[classname]//@[methodname]
+//        adNativeLoader = TTAdSdk.getAdManager().createAdNative(this)
+//
+//        /** 3、创建加载、展示监听器 */
+//        initListeners()
+//
+//        /** 4、加载广告 */
+//        adNativeLoader?.loadBannerExpressAd(adSlot, nativeExpressAdListener)
+//    }
+//
+//    private fun showAd() {
+//        if (bannerAd == null) {
+//            Logger.d("请先加载广告或等待广告加载完毕后再调用show方法")
+//        }
+//        bannerAd?.setExpressInteractionListener(expressAdInteractionListener)
+//        bannerAd?.setDislikeCallback(this@ToolsDetailActivity, dislikeInteractionCallback)
+//
+//        /** 注意：使用融合功能时，load成功后可直接调用getExpressAdView获取广告view展示，而无需调用render等onRenderSuccess后 */
+//        val bannerView: View? = bannerAd?.expressAdView
+//        if (bannerView != null) {
+//            bannerContainer?.removeAllViews()
+//            bannerContainer?.visibility = View.VISIBLE
+//            bannerContainer?.addView(bannerView)
+//        }
+//    }
+//
+//    private fun initListeners() {
+//        // 广告加载监听器
+//        //@[classname]
+//        nativeExpressAdListener = object : TTAdNative.NativeExpressAdListener {
+//            //@[classname]
+//            override fun onNativeExpressAdLoad(ads: MutableList<TTNativeExpressAd>?) {
+//                if (ads != null) {
+//                    Logger.d("banner load success: " + ads.size)
+//                }
+//                ads?.let {
+//                    if (it.size > 0) {
+//                        //@[classname]
+//                        val ad: TTNativeExpressAd = it[0]
+//                        bannerAd = ad
+//                    }
+//                }
+//                showAd()
+//            }
+//
+//            override fun onError(code: Int, message: String?) {
+//                Logger.d("banner load fail: $code, $message")
+//            }
+//        }
+//        // 广告展示监听器
+//        expressAdInteractionListener = object :
+//        //@[classname]
+//            TTNativeExpressAd.ExpressAdInteractionListener {
+//            override fun onAdClicked(view: View?, type: Int) {
+//                Logger.d("banner clicked")
+//            }
+//
+//            override fun onAdShow(view: View?, type: Int) {
+//                Logger.d("banner show")
+//            }
+//
+//            override fun onRenderFail(view: View?, msg: String?, code: Int) {
+//                // 注意：使用融合功能时，无需调用render，load成功后可调用mBannerAd.getExpressAdView()进行展示。
+//            }
+//
+//            override fun onRenderSuccess(view: View?, width: Float, height: Float) {
+//                // 注意：使用融合功能时，无需调用render，load成功后可调用mBannerAd.getExpressAdView()获取view进行展示。
+//                // 如果调用了render，则会直接回调onRenderSuccess，***** 参数view为null，请勿使用。*****
+//            }
+//        }
+//
+//        // dislike监听器，广告关闭时会回调onSelected
+//        //@[classname]
+//        dislikeInteractionCallback = object : TTAdDislike.DislikeInteractionCallback {
+//            override fun onShow() {
+//                Logger.d("banner dislike show")
+//            }
+//
+//            override fun onSelected(
+//                position: Int,
+//                value: String?,
+//                enforce: Boolean
+//            ) {
+//                bannerContainer?.visibility = View.GONE
+//                Logger.d("banner dislike closed")
+//                bannerContainer?.removeAllViews()
+//            }
+//
+//            override fun onCancel() {
+//                Logger.d("banner dislike cancel")
+//            }
+//        }
+//    }
+//
+//
+//    override fun isStatusBarEnabled(): Boolean {
+//        return getBoolean(IS_FULL_SCREEN)
+//    }
+//
+//    // 销毁广告
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        bannerAd?.destroy()
+//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

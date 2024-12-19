@@ -11,9 +11,9 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import com.airbnb.lottie.LottieAnimationView
 import com.blankj.utilcode.util.SpanUtils
-import com.bytedance.applog.AppLog
-import com.bytedance.applog.InitConfig
-import com.bytedance.applog.util.UriConstants
+//import com.bytedance.applog.AppLog
+//import com.bytedance.applog.InitConfig
+//import com.bytedance.applog.util.UriConstants
 import com.gyf.immersionbar.BarHide
 import com.gyf.immersionbar.ImmersionBar
 import com.hjq.http.EasyConfig
@@ -38,7 +38,7 @@ class SplashActivity : AppActivity() {
 
     private val lottieView: LottieAnimationView? by lazy { findViewById(R.id.lav_splash_lottie) }
     private val debugView: SlantedTextView? by lazy { findViewById(R.id.iv_splash_debug) }
-    private val mSplashContainer: FrameLayout? by lazy { findViewById(R.id.ad_view) }
+//    private val mSplashContainer: FrameLayout? by lazy { findViewById(R.id.ad_view) }
 
 //    //@[classname]
 //    private var csjSplashAdListener: CSJSplashAdListener? = null
@@ -383,26 +383,26 @@ class SplashActivity : AppActivity() {
         finish()
     }
 
-    /**
-     * 初始化穿山甲视频
-     */
-    private fun initCsjApplog(application: Application?) {
-
-        /* 初始化开始，appid和渠道，appid如不清楚请联系客户成功经理
-        * 注意第二个参数 channel 不能为空
-        */
-        val config = InitConfig("576882", AppConfig.getChannel())
-        //上报地址
-        config.setUriConfig(UriConstants.DEFAULT)
-        // 加密开关，SDK 5.5.1 及以上版本支持，false 为关闭加密，上线前建议设置为 true
-        AppLog.setEncryptAndCompress(true)
-
-        config.setAutoStart(true)
-        /* 初始化结束 */
-        config.setAutoStart(true)
-
-        AppLog.init(this, config)
-    }
+//    /**
+//     * 初始化穿山甲视频
+//     */
+//    private fun initCsjApplog(application: Application?) {
+//
+//        /* 初始化开始，appid和渠道，appid如不清楚请联系客户成功经理
+//        * 注意第二个参数 channel 不能为空
+//        */
+//        val config = InitConfig("576882", AppConfig.getChannel())
+//        //上报地址
+//        config.setUriConfig(UriConstants.DEFAULT)
+//        // 加密开关，SDK 5.5.1 及以上版本支持，false 为关闭加密，上线前建议设置为 true
+//        AppLog.setEncryptAndCompress(true)
+//
+//        config.setAutoStart(true)
+//        /* 初始化结束 */
+//        config.setAutoStart(true)
+//
+//        AppLog.init(this, config)
+//    }
 
 //    override fun onDestroy() {
 //        super.onDestroy()

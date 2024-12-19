@@ -108,32 +108,32 @@
         <!--            android:value="{                 apiVersionCode:5615,                 packageName:com.byted.pangle,                 minPluginVersion:5615,                 internalPath:2035606132,                 internalVersionCode:5615             }"-->
         <!--            tools:replace="android:value" />-->
 
-        <activity
-            android:name="com.android.ttcjpaysdk.base.framework.CJPayAlipaySignReturnActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+<!--        <activity-->
+<!--            android:name="com.android.ttcjpaysdk.base.framework.CJPayAlipaySignReturnActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
 
-                <data
-                    android:host="${applicationId}"
-                    android:scheme="cjsign" />
-            </intent-filter>
-        </activity>
+<!--                <data-->
+<!--                    android:host="${applicationId}"-->
+<!--                    android:scheme="cjsign" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
 
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL}" />
 
-        <service
-            android:name="com.amap.api.location.APSService"
-            android:exported="false" />
+<!--        <service-->
+<!--            android:name="com.amap.api.location.APSService"-->
+<!--            android:exported="false" />-->
 
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="2a76a412140e9160433e8cd3755df710" />
+<!--        <meta-data-->
+<!--            android:name="com.amap.api.v2.apikey"-->
+<!--            android:value="2a76a412140e9160433e8cd3755df710" />-->
 
         <!-- 表示当前已经适配了分区存储 -->
         <meta-data
@@ -153,20 +153,20 @@
         </provider>
 
         <!-- 穿山甲 start================== -->
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-            android:authorities="${applicationId}.TTFileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/pangle_file_paths" />
-        </provider>
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"-->
+<!--            android:authorities="${applicationId}.TTFileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/pangle_file_paths" />-->
+<!--        </provider>-->
 
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="${applicationId}.TTMultiProvider"
-            android:exported="false" />
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"-->
+<!--            android:authorities="${applicationId}.TTMultiProvider"-->
+<!--            android:exported="false" />-->
         <!-- 穿山甲 end================== -->
 
         <!-- baidu start================== -->

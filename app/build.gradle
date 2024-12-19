@@ -341,17 +341,17 @@ dependencies {
     //banner https://github.com/youth5201314/banner
     implementation 'io.github.youth5201314:banner:2.2.2'
 
-    //穿山甲广告 https://www.csjplatform.com/union/media/union/quicksdk/?sdk_name=csj&platform=android&version=5.7.0.5
-    implementation "com.pangle.cn:mediation-sdk:5.9.0.8"  //融合SDK
-
-    implementation "com.pangle.cn:mediation-ks-adapter:3.3.57.0"//ks adapter
-
-    implementation "com.pangle.cn:mediation-gdt-adapter:4.561.1431.0" //gdt adapter
-
-    implementation "com.pangle.cn:mediation-baidu-adapter:9.332.0"//baidu adapter
-
-    //穿山甲AppLog https://www.csjplatform.com/union/media/union/growth/applog/content/5465946
-    implementation 'com.bytedance.applog:RangersAppLog-Lite-cn:6.15.3'
+//    //穿山甲广告 https://www.csjplatform.com/union/media/union/quicksdk/?sdk_name=csj&platform=android&version=5.7.0.5
+//    implementation "com.pangle.cn:mediation-sdk:5.9.0.8"  //融合SDK
+//
+//    implementation "com.pangle.cn:mediation-ks-adapter:3.3.57.0"//ks adapter
+//
+//    implementation "com.pangle.cn:mediation-gdt-adapter:4.561.1431.0" //gdt adapter
+//
+//    implementation "com.pangle.cn:mediation-baidu-adapter:9.332.0"//baidu adapter
+//
+//    //穿山甲AppLog https://www.csjplatform.com/union/media/union/growth/applog/content/5465946
+//    implementation 'com.bytedance.applog:RangersAppLog-Lite-cn:6.15.3'
 
     //为保证兼容性 建议使用广告SDK版本
 //    implementation 'com.pangle.cn:ads-sdk-pro:5.6.1.5'
