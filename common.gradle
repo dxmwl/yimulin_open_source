@@ -11,7 +11,7 @@ android {
         // 目标适配版本
         targetSdkVersion 34
         versionName '1.4.4'
-        versionCode 28
+        versionCode 29
     }
 
     // 支持 Java JDK 8

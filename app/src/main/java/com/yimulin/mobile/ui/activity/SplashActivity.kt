@@ -19,7 +19,6 @@ import com.gyf.immersionbar.ImmersionBar
 import com.hjq.http.EasyConfig
 import com.hjq.widget.view.SlantedTextView
 import com.pdlbox.tools.utils.SpUtils
-import com.tencent.bugly.crashreport.CrashReport
 import com.yimulin.mobile.R
 import com.yimulin.mobile.app.AppActivity
 import com.yimulin.mobile.manager.ActivityManager

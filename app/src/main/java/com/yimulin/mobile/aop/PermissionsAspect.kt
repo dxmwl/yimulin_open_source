@@ -4,7 +4,6 @@ import android.app.Activity
 import com.yimulin.mobile.manager.*
 import com.yimulin.mobile.other.PermissionCallback
 import com.hjq.permissions.XXPermissions
-import com.tencent.bugly.crashreport.CrashReport
 import com.yimulin.mobile.manager.ActivityManager
 import com.yimulin.mobile.other.PermissionInterceptor
 import org.aspectj.lang.ProceedingJoinPoint
@@ -66,7 +65,7 @@ class PermissionsAspect {
                             // 获得权限，执行原方法
                             joinPoint.proceed()
                         } catch (e: Throwable) {
-                            CrashReport.postCatchedException(e)
+//                            CrashReport.postCatchedException(e)
                         }
                     }
                 }

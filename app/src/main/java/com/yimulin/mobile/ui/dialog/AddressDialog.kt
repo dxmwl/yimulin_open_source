@@ -16,7 +16,6 @@ import com.yimulin.mobile.R
 import com.yimulin.mobile.aop.SingleClick
 import com.yimulin.mobile.ui.adapter.TabAdapter.OnTabListener
 import com.yimulin.mobile.ui.dialog.AddressDialog.RecyclerViewAdapter.OnSelectListener
-import com.tencent.bugly.crashreport.CrashReport
 import com.yimulin.mobile.app.AppAdapter
 import com.yimulin.mobile.ui.adapter.TabAdapter
 import org.json.JSONArray
@@ -395,7 +394,7 @@ class AddressDialog {
                 }
                 return list
             } catch (e: JSONException) {
-                CrashReport.postCatchedException(e)
+//                CrashReport.postCatchedException(e)
             }
             return null
         }
@@ -420,7 +419,7 @@ class AddressDialog {
                 }
                 list
             } catch (e: JSONException) {
-                CrashReport.postCatchedException(e)
+//                CrashReport.postCatchedException(e)
                 null
             }
         }
@@ -441,7 +440,7 @@ class AddressDialog {
                 }
                 list
             } catch (e: JSONException) {
-                CrashReport.postCatchedException(e)
+//                CrashReport.postCatchedException(e)
                 null
             }
         }
@@ -463,9 +462,9 @@ class AddressDialog {
                 inputStream.close()
                 return JSONArray(outStream.toString())
             } catch (e: IOException) {
-                CrashReport.postCatchedException(e)
+//                CrashReport.postCatchedException(e)
             } catch (e: JSONException) {
-                CrashReport.postCatchedException(e)
+//                CrashReport.postCatchedException(e)
             }
             return null
         }

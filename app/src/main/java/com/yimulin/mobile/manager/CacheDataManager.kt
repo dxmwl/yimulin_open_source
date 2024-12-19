@@ -2,7 +2,6 @@ package com.yimulin.mobile.manager
 
 import android.content.Context
 import android.os.Environment
-import com.tencent.bugly.crashreport.CrashReport
 import java.io.File
 import java.math.BigDecimal
 
@@ -68,7 +67,7 @@ object CacheDataManager {
                 }
             }
         } catch (e: Exception) {
-            CrashReport.postCatchedException(e)
+//            CrashReport.postCatchedException(e)
         }
         return size
     }

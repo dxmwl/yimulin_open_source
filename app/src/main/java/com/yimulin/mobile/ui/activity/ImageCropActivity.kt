@@ -11,7 +11,6 @@ import android.provider.MediaStore
 import androidx.core.content.FileProvider
 import com.hjq.base.BaseActivity
 import com.hjq.permissions.Permission
-import com.tencent.bugly.crashreport.CrashReport
 import com.yimulin.mobile.R
 import com.yimulin.mobile.aop.Log
 import com.yimulin.mobile.aop.Permissions
@@ -221,7 +220,7 @@ class ImageCropActivity : AppActivity() {
                 }
             })
         } catch (e: ActivityNotFoundException) {
-            CrashReport.postCatchedException(e)
+//            CrashReport.postCatchedException(e)
             setResult(
                 RESULT_ERROR,
                 Intent().putExtra(
